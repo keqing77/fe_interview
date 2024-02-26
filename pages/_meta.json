@@ -1,0 +1,25 @@
+{
+  "index": "网站介绍",
+  "about": {
+    "type": "page",
+    "title": "关于我",
+    "theme": {
+      "typesetting": "article"
+    }
+  },
+  "JavaScript": {
+    "title": "JavaScript"
+  },
+  "React": {
+    "title": "React"
+  },
+  "Tools": {
+    "title": "构建工具"
+  },
+  "Network": {
+    "title": "网络"
+  },
+  "Browser": {
+    "title": "浏览器"
+  }
+}
