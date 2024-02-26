@@ -2,9 +2,161 @@
 title: 浏览器
 ---
 
+import { Callout } from "nextra/components";
+
 ## 浏览器
 
 - 缓存机制
 - 渲染原理
 - 基础知识点
 - 事件机制
+
+##### 什么是同源策略？ 跨域方法有哪些？ 小程序有跨域吗？
+
+<Callout emoji="👾">
+  **同源策略**
+  指的是一个网页文档或脚本只能访问来自同一个源`(域名、协议和端口)`的资源,
+  而无法访问来自不同源的资源
+</Callout>
+
+> 跨域的方法有：
+
+1. JSONP
+
+- 通过动态创建 `<script>` 标签, 并指定请求的 URL, 服务器返回的数据会被包裹在指定的回调函数中, 从而实现跨域获取数据
+
+2. CORS(跨域资源共享)
+
+- 通过在响应头中添加 CORS 相关的标识, 服务器可以控制是否允许跨域访问
+
+3. 代理
+
+- Nginx, Vite/Webpack proxy config, 客户端发送请求到同源服务器, 同源服务器再代理到目标服务器, 然后返回结果给客户端
+
+4. WebSocket
+
+- WebSocket 是一种双向通信协议, 没有跨域限制, 它可以在客户端和服务器之间建立持久连接, 绕过同源策略的限制, 实现跨域通信
+
+<Callout type="info" emoji="ℹ️">
+  跨域问题只存在浏览器当中,
+  而微信小程序中的网络请求是通过微信客户端中的内置浏览器发出的,
+  所以微信小程序的网络请求是受到跨域限制的
+</Callout>
+
+5. iframe
+
+- iframe + windows.postmessage
+- iframe + windows.document.domain
+- iframe + location.hash
+
+##### cookies, sessionStorage 和 localStorage 的区别？
+
+都储存在浏览器本地，
+
+| 名称     | cookies                         | sessionStorage | localStorage     |
+| -------- | ------------------------------- | -------------- | ---------------- |
+| 大小     | 4KB                             | 5MB            | 5MB              |
+| 作用域   | Text                            | Text           | Text             |
+| 生命周期 | 关闭浏览器或者设置 Expires 时间 | 关闭标签页     | 一直在，手动删除 |
+| 特点     | 每次请求放在 HTTP Header 中     | 键值对         | 键值对           |
+| 安全性   | `Secure HttpOnly` 避免 XSS 攻击 | XSS 攻击       | XSS 攻击         |
+
+```js
+Cookies.set("name", "value", { expires: 7 }); // 设置一个cookie，7天后失效
+Cookies.get("name"); // => 'value'
+Cookies.remove("name");
+
+localStorage.setItem("name", "value");
+localStorage.getItem("name"); // => 'value'
+localStorage.removeItem("name");
+localStorage.clear(); // 删除所有数据
+
+sessionStorage.setItem("name", "value");
+sessionStorage.setItem("name");
+sessionStorage.setItem("name");
+sessionStorage.clear();
+```
+
+##### 谈谈浏览器的内核，什么是内核？常见的有哪些?
+
+- IE - Trident
+- Chrome - Blink
+- Firefox - Gecko
+- Safari - Webkit
+
+浏览器内核又可以分成两部分：**渲染引擎和 JS 引擎**。它负责取得网页的内容(HTML、XML、图像等等)、整理讯息(例如加入 CSS 等)，以及计算网页的显示方式，然后会输出至显示器或打印机。
+
+JS 引擎则是解析 Javascript 语言，执行 javascript 语言来实现网页的动态效果
+
+##### documen.write 和 innerHTML 的区别?
+
+`document.write` 是重写整个 document, 写入内容是字符串的 html
+
+`innerHTML` 是 HTMLElement 的属性, 是一个元素的内部 html 内容
+
+##### 如何阻止事件冒泡和默认事件?
+
+阻止冒泡和捕获: `e.stopPropagation()`
+
+阻止默认事件: `e.preventDefault()`
+
+##### 事件冒泡和事件委托的原理?
+
+事件冒泡是指当一个元素上的事件被触发时，该事件会从触发的元素开始向上依次传播至其父元素，直到传播至文档根节点为止。事件冒泡允许在父元素上捕获事件并执行相应的处理逻辑，而不必在每个子元素上都绑定事件处理程序。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubbling</title>
+  </head>
+  <body>
+    <ul id="list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+
+    <script>
+      const list = document.getElementById("list");
+
+      list.addEventListener("click", function (event) {
+        console.log(event.target.textContent);
+      });
+    </script>
+  </body>
+</html>
+```
+
+事件委托是一种利用事件冒泡的机制，将事件处理程序绑定到一个父元素上，然后利用事件冒泡的特性使得在子元素上触发的事件最终被传播到父元素上进行处理。通过事件委托，你可以减少对子元素的事件处理程序绑定，提高性能并简化代码。
+事件委托的原理在于利用了事件冒泡，通过在父元素上统一处理事件，减少了事件处理程序的数量，提高了性能和代码的简洁性。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Delegation</title>
+  </head>
+  <body>
+    <ul id="list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+
+    <script>
+      const list = document.getElementById("list");
+
+      list.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+          console.log(event.target.textContent);
+        }
+      });
+    </script>
+  </body>
+</html>
+```

@@ -1,1 +1,167 @@
 ## React 面试题
+
+- https://q.shanyue.tech/
+
+---
+
+##### 为什么 React 组件只能返回一个根元素？Fragment 如何解决？
+
+JSX 是一种类似 XML 的语法, 它会被转译成对 `React.createElement()` 函数的调用, 而这个函数只能接受一个根元素作为参数, 函数最终也只有一个返回值, 没有函数能返回两个值。
+React 提供了一个特殊的组件叫做 Fragment, 它允许你在不创建额外 DOM 节点的情况下返回多个子元素。当解析 `<Fragment>` 时, 它实际上只是一个空的 JavaScript 对象。React 在处理这个空对象时, 知道它不需要创建真实的 DOM 元素, 所以它会直接渲染 Fragment 内部的子元素, 并且将它们当作一个整体对待。
+
+```JSX
+import React, { Component, Fragment } from 'react'
+
+// 一般形式
+render() {
+  return (
+    <React.Fragment>
+      <ChildA />
+      <ChildB />
+      <ChildC />
+    </React.Fragment>
+  );
+}
+// 也可以写成以下形式
+render() {
+  return (
+    <>
+      <ChildA />
+      <ChildB />
+      <ChildC />
+    </>
+  );
+}
+```
+
+##### 什么是 React 合成事件?
+
+React 合成事件是 React 提供的一种事件处理机制, 它是在原生 DOM 事件系统的基础上进行了封装和优化, 使得事件处理更加高效且易于使用
+
+- 提供统一的 API, 抹平各大浏览器差异, 不必担心浏览器兼容性
+- 所有事件绑定在 React Root Element 进行事件委托, 减少内存消耗和提高性能
+
+##### React 重新渲染的条件 ：
+
+> React 触发重新渲染的条件有哪些？ 重新渲染会做什么？重新渲染的条件：  
+>  关于 React 渲染机制: React re-renders guide: everything, all at once
+
+- state 改变
+- 父组件重新渲染
+- context 改变
+- hooks 改变
+
+  状态更改是所有重新渲染的“根源”；当组件的 props 改变时, 就会发生重新渲染, 这句话其本身是不正确的, 因为要改变 props , 父组件必须会重新渲染, 将导致子组件的重新渲染, 无论其 props 如何
+
+  当一个组件重新渲染时, 它也会重新渲染它的所有子组件；
+
+  当 Context Provider 中的值发生更改时, 所有使用此 Context 的组件都将重新渲染, 即使它们不直接使用数据的更改部分；
+
+##### 重新渲染会做什么？
+
+创建虚拟 DOM 是为了解决因频繁操作真实 DOM 而导致的性能问题。它是真实 DOM 的轻量级内存表示；
+当组件被渲染时, 虚拟 DOM 计算新状态和先前状态之间的差异(称为“diff”的过程), 并对真实 DOM 进行最小的更改集, 以使其与更新的虚拟 DOM 同步(一个称为“reconciliation”的过程)
+每次的视图更新流程是这样的：
+
+1. 组件渲染生成一棵新的虚拟 dom 树；
+2. 新旧虚拟 dom 树对比, 找出变动的部分；(也就是常说的 diff 算法)
+3. 为真正改变的部分创建真实 dom, 把他们挂载到文档, 实现页面重渲染；
+
+##### 讲讲 React Hooks 的闭包陷阱, 你是怎么解决的？
+
+React Hooks 的闭包陷阱通常发生在 useEffect 和 useCallback 等钩子函数中, 当它们依赖于某些值时, 可能导致意外的行为, 因为它们会捕获到渲染时闭包中的值, 而不是最新的值。
+
+```jsx
+import React, { useState, useEffect } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      console.log(count);
+      setCount((prevCount) => prevCount + 1); // 使用回调形式更新 count
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [count]); // 在这里传入 count 作为 useEffect 的依赖项
+
+  return <div>{count}</div>;
+}
+
+export default Counter;
+```
+
+我们使用了 setCount 的回调形式来更新 count, 以确保在每次更新时都使用最新的 count 值。同时, 我们将 count 作为 useEffect 的依赖项传入, 以确保 useEffect 在 count 更新时触发。这样就避免了闭包陷阱, 确保了组件行为的正确性。
+
+##### React 受控组件和非受控组件
+
+- 受控组件是指表单元素的值由 React 组件的状态(state)来控制。这意味着每当用户输入内容时, 对应的状态会更新, 并且由 React 来管理输入框的值。如 `<input> <select> <textearea>` 等组件
+- 非受控组件是指表单元素的值不受 React 组件状态的控制, 而是由 DOM 元素本身来管理, 非受控组件将真实数据储存在 DOM 节点中。通常使用 ref 来获取 DOM 元素的值。 如 复选框 checed
+- React 官方推荐使用受控组件的形式
+  什么是 React Hooks ？原理? 官方给出的使用限制是什么？为什么有这样的限制？
+  hooks 的优点是什么？
+- 没有 hooks 之前, 组件之间只能使用 mixin, Hoc 等手段复用状态逻辑, 代码变得庞大的时候变得难以理解
+- class 组件心智负担更重, 需要理解 this 的工作方式, 事件绑定等等。
+- 更加贴近函数式编程的范式,
+
+##### hooks 的使用限制
+
+1. 只能在 React 函数顶层使用, 且不能在 循环, 条件或嵌套函数中调用 Hook
+   Hooks 的实现依赖于 React 内部的 Fiber 架构。当组件被渲染时, React 会创建 Fiber 节点树, Hooks 会在这个过程中被调用并与 Fiber 节点关联。这样可以确保每个 Hook 的状态都与特定的组件实例相关联, 而不会混淆不同组件实例之间的状态, React 依赖于 Hook 调用的顺序来正确地跟踪组件的状态, 如果 hooks 被包裹循环或条件语句中, 那每就可能会引起调用顺序的错乱, 从而造成意想不到的错误。。
+   自定义组件和自定义 hooks 看上去只有返回值不同, 为什么组件可以在循环和条件中使用, 而 hooks 不行？
+   自定义组件只是一段描述 UI 的 JSX, 用来创建 UI 的, 和其他 JSX 一样都是可复用的 UI 元素; 而自定义 Hooks 是一种函数, 用于封装可复用的逻辑, 不能创建可见的 UI 元素。
+   自定义 Hooks 的目的是共享逻辑而不是渲染 UI, 因此它们在循环和条件语句中的使用是受限制的。React 需要在内部进行一些特定的操作来管理 Hook 的状态和生命周期, 这些操作只能在 React 组件内部完成。因此, 自定义 Hooks 必须在函数组件的顶层使用, 不能在循环、条件语句或其他 JavaScript 函数中调用。
+   这些限制对于保证代码正确运行是否是充要条件(一定充分, 但不必要)
+   是充分条件, 但并不是必要条件
+   这些限制是为了帮助开发者编写更可靠、更易于理解和维护的代码, 尤其是在涉及到状态管理和组件生命周期时。
+   通过强制这些限制, React 可以更好地跟踪组件状态和生命周期, 确保状态的一致性, 避免出现难以追踪和排查的错误。
+   然而, 并不是所有不符合这些限制的代码都是错误的。
+
+##### useEffect 和 useLayoutEffect 区别 ？
+
+useEffect 中的回调函数会在组件渲染完成后执行, useLayoutEffect 中的回调函数会在浏览器执行绘制之前立即同步执行
+
+- Dom 时间, 一个在之前, 一个之后, useLayoutEffect 会阻塞浏览器渲染, 切记执行同步的耗时操作
+- useLayoutEffect 要比 useEffect 更早的触发执行
+- useLayoutEffect 会阻塞浏览器渲染, 切记执行同步的耗时操作
+  什么是 virtual DOM, 有什么优缺点？
+  优点:
+- 跨平台, 虚拟 DOM 只是一个对象, 可以渲染到 DOM 以外的端, 这样 React 除了 web 还可以写 native
+- Virtual DOM 在牺牲(牺牲很关键)部分性能的前提下, 增加了可维护性, 这也是很多框架的通性。 实现了对 DOM 的集中化操作, 在数据改变时先对虚拟 DOM 进行修改, 再反映到真实的 DOM 中, 用最小的代价来更新 DOM, 提高效率(提升效率要想想是跟哪个阶段比提升了效率, 别只记住了这一条)
+  缺点:
+- 首次渲染大量 DOM 时, 由于多了一层虚拟 DOM 的计算, 会比 innerHTML 插入慢
+- 虚拟 DOM 需要在内存中的维护一份 DOM 的副本(更上面一条其实也差不多, 上面一条是从速度上, 这条是空间上)。
+- 如果虚拟 DOM 大量更改, 这是合适的。但是单一的, 频繁的更新的话, 虚拟 DOM 将会花费更多的时间处理计算的工作。所以, 如果你有一个 DOM 节点相对较少页面, 用虚拟 DOM, 它实际上有可能会更慢。但对于大多数单页面应用, 这应该都会更快。
+
+##### React fiber 原理
+
+什么是 fiber node, 怎么和 diff 结合？fiber 如何恢复中断？ - react fiber 没法让比较的时间缩短, 但它使得 diff 的过程被分成一小段一小段的, 但有了“保存工作进度”的能力, 动画变流畅的根本原因, 是一秒内可以获得更多动画帧
+
+- React 颗粒度不够细, 无法精确更新, 需要 Fiber, Fiber node 添加 child, sibling, parent 三个指针, react fiber 这种数据结构使得节点可以回溯到其父节点, 只要保留下中断的节点索引, 就可以恢复之前的工作进度
+  没有 fiber 之前, 也就是 React V15 的时候, 在渲染时, 会递归比对 VirtualDOM 树, 找出需要变动的节点, 然后同步更新它们, 这个过程是需要一口气完成的, , 如果 JS 计算量大造成 Diff 时间太长的话, 占据主线程去做比较, 渲染线程便无法做其他工作页面会卡顿, UI 无响应。 基于 Fiber 的链表结构, 将原来的树形结构(vdom)转换成 Fiber 链表的形式 (child/sibling), 整个 Fiber 的遍历是基于循环而非递归, 可以随时中断和恢复, 根据任务优先级执行紧急的任务, 这样在单位时间内, CSS 渲染的时间变多了, 尽管没有减少 JS 的运行时间, 但解决了页面卡顿的问题。
+
+##### React 列表中的 key 的作用 ? key 的选取有啥限制条件?
+
+##### React Portal 有哪些使用场景?
+
+##### React custom hooks 如何实现? 作用?
+
+##### 使用过 useMemo 和 useCallback 吗?
+
+React.useMemo 与 React.useCallback 是如何进行性能优化的?
+
+##### useEffect 中如何使用 async/await
+
+##### React.forwardRef 是什么？它有什么作用？
+
+在 React 19 中, 这个 API 将会被删除。 通常来说, React.forwardRef 会创建一个 React 组件, 这个组件能够将其接受的 ref 属性转发到其组件树下的另一个组件中。这种技术并不常见, 但在以下两种场景中特别有用：
+
+- 转发 refs 到 DOM 组件
+- 在高阶组件中转发 refs
+
+##### 什么是服务器渲染 (SSR)? 和 SPA 进行对比分析, 各自的优缺点
+
+https://web.dev/rendering-on-the-web/
+
+##### 什么是流式服务端渲染？

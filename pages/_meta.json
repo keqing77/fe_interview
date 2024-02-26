@@ -1,5 +1,11 @@
 {
-  "index": "网站介绍",
+  "index": {
+    "type": "page",
+    "title": "首页",
+    "theme": {
+      "layout": "full"
+    }
+  },
   "about": {
     "type": "page",
     "title": "关于我",

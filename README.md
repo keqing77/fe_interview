@@ -1,2 +1,15 @@
-# fe_interview
-interview questions for web-frontEnd
+# 前端面试仓库
+
+整理最新前端面试题，每周更新
+
+- JavaScript 基础，进阶，es6
+- React 基础和进阶
+- 计算机网络
+- 前端工具
+- 手撕代码，数据结构和算法
+
+## 在线预览
+
+预览网站： xxxx,
+
+缩略图

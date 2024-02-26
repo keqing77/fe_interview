@@ -28,35 +28,33 @@ const logo = (
       }
       svg:hover {
         mask-position: 100%;
-        transition:
-          mask-position 1s ease,
-          -webkit-mask-position 1s ease;
+        transition: mask-position 1s ease, -webkit-mask-position 1s ease;
       }
     `}</style>
   </svg>
-)
+);
 
 export default {
   logo,
   project: {
-    link: 'https://github.com/keqing77/fe_interview',
+    link: "https://github.com/keqing77/fe_interview",
   },
   editLink: {
-    text: 'Edit this page on GitHub →'
+    text: "Edit this page on GitHub →",
   },
   feedback: {
-    content: 'Question? Give us feedback →',
-    labels: 'feedback'
+    content: "Question? Give us feedback →",
+    labels: "feedback",
   },
   sidebar: {
     titleComponent({ title, type }) {
-      if (type === 'separator') {
-        return <span className="cursor-default">{title}</span>
+      if (type === "separator") {
+        return <span className="cursor-default">{title}</span>;
       }
-      return <>{title}</>
+      return <>{title}</>;
     },
     defaultMenuCollapseLevel: 2,
-    toggleButton: true
+    toggleButton: true,
   },
   footer: {
     text: (
@@ -83,13 +81,10 @@ export default {
           © {new Date().getFullYear()} The Nextra Project.
         </p>
       </div>
-    )
+    ),
   },
   toc: {
-    backToTop: true
+    backToTop: true,
   },
   // ... other theme options
-}
-
-
-
+};
