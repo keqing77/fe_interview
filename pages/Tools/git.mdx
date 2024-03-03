@@ -6,6 +6,17 @@
 
 svn 中的分支是整个版本库的复制的一份完整目录, 而 git 的分支是指针指向某次提交, 因此 git 的分支创建更加开销更小并且分支上的变化不会影响到其他人。svn 的分支变化会影响到所有的人
 
+###### git 常见命令说一下
+
+```sh
+git pull
+git rebase
+git cherry-pick
+git reset
+git checkout
+git reflog
+```
+
 ###### git pull 和 git fetch 的区别
 
 `git pull = git fetch + git merge`
@@ -54,3 +65,7 @@ git reset --soft HEAD^
 ###### git submodule 了解吗？和 Monorepo 区别？
 
 Git 的 submodule 功能就是建立了当前项目与子模块之间的依赖关系：子模块路径、子模块的远程仓库、子模块的版本号
+
+###### git init 做了什么?
+
+###### 其他分支有你需要的代码, 怎么加入到你的分支？

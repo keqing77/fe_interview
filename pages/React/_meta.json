@@ -1,5 +1,5 @@
 {
   "react":"React 面试题",
-  "redux": "React 路由",
-  "router": "Redux"
+  "router": "React 路由",
+  "redux": "Redux 状态管理"
 }

@@ -1,7 +1,9 @@
 {
   "name": "fe_interview",
+  "author": "keqing",
+  "description": "front-end interviews collection",
   "version": "1.0.0",
-  "description": "",
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -9,8 +11,6 @@
     "start": "next start"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "next": "^14.1.0",
     "nextra": "^2.13.3",
