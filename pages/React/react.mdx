@@ -1,15 +1,37 @@
+import { Callout } from "nextra/components";
+
 ## React 面试题
 
-- https://q.shanyue.tech/
+##### 什么是 JSX ? Babel 如何转换 JSX 让浏览器识别的?
 
----
+<Callout emoji="👾">
+  **JSX** 是JavaScript XML, 一种语法拓展, 可以使用 JS写出类似 HTML 的代码,
+  直观和简洁地描述 UI
+</Callout>
 
-##### 为什么 React 组件只能返回一个根元素？Fragment 如何解决？
+`const element = <h1>Hello, world!</h1>;` 就是一个简单的 JSX 代码片段, 但是浏览器无法直接识别 JSX 代码, 所以需要使用 Babel 进行转换。
 
-JSX 是一种类似 XML 的语法, 它会被转译成对 `React.createElement()` 函数的调用, 而这个函数只能接受一个根元素作为参数, 函数最终也只有一个返回值, 没有函数能返回两个值。
-React 提供了一个特殊的组件叫做 Fragment, 它允许你在不创建额外 DOM 节点的情况下返回多个子元素。当解析 `<Fragment>` 时, 它实际上只是一个空的 JavaScript 对象。React 在处理这个空对象时, 知道它不需要创建真实的 DOM 元素, 所以它会直接渲染 Fragment 内部的子元素, 并且将它们当作一个整体对待。
+Babel 是一个 JavaScript 编译器, 它可以将 ES6/ES7 代码转换成 ES5 代码, 也可以将 JSX 代码转换成 JavaScript 代码。Babel 的 JSX 转换过程如下:
 
-```JSX
+1. **解析**: 将 JSX 代码解析成一个抽象语法树(AST)
+2. **转换**: 对 AST 进行转换, 将 JSX 元素转换成 `React.createElement()` 函数调用
+3. **生成**: 将转换后的 AST 生成 JavaScript 代码
+
+```jsx
+// JSX 代码
+const element = <h1>Hello, world!</h1>;
+
+// Babel 转换后的代码
+const element = React.createElement("h1", null, "Hello, world!");
+```
+
+##### 为什么 React 组件只能返回一个根元素? React 是如何解决?
+
+React 组件只能返回一个根元素, **这是因为 `JSX 语法` 的限制**, JSX 是一种类似 XML 的语法, 它会被转译成对 `React.createElement()` 函数的调用, 而这个函数只能接受一个根元素作为参数, 函数最终也只有一个返回值, 没有函数能返回两个值, 如果返回两个根元素, React 不知道该如何处理。
+
+React 提供了一个特殊的组件叫做 Fragment, **它允许你在不创建额外 DOM 节点的情况下返回多个子元素**。当解析 `<Fragment>` 时, 它实际上只是一个空的 JavaScript 对象。React 在处理这个空对象时, 知道它不需要创建真实的 DOM 元素, 所以它会直接渲染 Fragment 内部的子元素, 并且将它们当作一个整体对待。
+
+```jsx
 import React, { Component, Fragment } from 'react'
 
 // 一般形式
@@ -34,42 +56,175 @@ render() {
 }
 ```
 
-##### 什么是 React 合成事件?
+##### 什么是 React 合成事件? React 的 事件机制?
 
-React 合成事件是 React 提供的一种事件处理机制, 它是在原生 DOM 事件系统的基础上进行了封装和优化, 使得事件处理更加高效且易于使用
+> React 合成事件是 React 提供的一种事件处理机制, 它是在原生 DOM 事件系统的基础上进行了封装和优化, 使得事件处理更加高效且易于使用
 
 - 提供统一的 API, 抹平各大浏览器差异, 不必担心浏览器兼容性
 - 所有事件绑定在 React Root Element 进行事件委托, 减少内存消耗和提高性能
 
-##### React 重新渲染的条件 ：
+##### 什么是虚拟 DOM, 好处 ? React 重新渲染会做什么?
 
-> React 触发重新渲染的条件有哪些？ 重新渲染会做什么？重新渲染的条件：  
->  关于 React 渲染机制: React re-renders guide: everything, all at once
+> `虚拟 DOM` 就是一个 JavaScript 对象, 可以渲染到 DOM 以外的端, 使得可以抽象地描述 UI , **可以跨平台**, 例如 React Native;
 
-- state 改变
-- 父组件重新渲染
-- context 改变
-- hooks 改变
+> 创建虚拟 DOM 是为了解决因频繁操作真实 DOM 而导致的性能问题。它是真实 DOM 的轻量级内存表示, 虚拟 DOM 需要在内存中的维护一份 DOM 的副本, 首次渲染时候多了一层虚拟 DOM 的计算, 会比 innerHtml 慢, 但是在数据改变时先对虚拟 DOM 进行修改, 再反映到真实的 DOM 中, 用最小的代价来更新 DOM, 提高效率。
 
-  状态更改是所有重新渲染的“根源”；当组件的 props 改变时, 就会发生重新渲染, 这句话其本身是不正确的, 因为要改变 props , 父组件必须会重新渲染, 将导致子组件的重新渲染, 无论其 props 如何
-
-  当一个组件重新渲染时, 它也会重新渲染它的所有子组件；
-
-  当 Context Provider 中的值发生更改时, 所有使用此 Context 的组件都将重新渲染, 即使它们不直接使用数据的更改部分；
-
-##### 重新渲染会做什么？
-
-创建虚拟 DOM 是为了解决因频繁操作真实 DOM 而导致的性能问题。它是真实 DOM 的轻量级内存表示；
-当组件被渲染时, 虚拟 DOM 计算新状态和先前状态之间的差异(称为“diff”的过程), 并对真实 DOM 进行最小的更改集, 以使其与更新的虚拟 DOM 同步(一个称为“reconciliation”的过程)
-每次的视图更新流程是这样的：
+当组件被重新渲染时, 虚拟 DOM 计算新状态和先前状态之间的差异(称为“diff”的过程), React 使用一种高效的算法来比较新旧 JSX 结构, 找出需要更新的部分, 并对真实 DOM 进行最小的更改集,而不是整个 UI, 以使其与更新的虚拟 DOM 同步(一个称为“reconciliation”的过程)
+每次的视图更新流程是这样的:
 
 1. 组件渲染生成一棵新的虚拟 dom 树；
 2. 新旧虚拟 dom 树对比, 找出变动的部分；(也就是常说的 diff 算法)
 3. 为真正改变的部分创建真实 dom, 把他们挂载到文档, 实现页面重渲染；
 
-##### 讲讲 React Hooks 的闭包陷阱, 你是怎么解决的？
+<Callout type="error" emoji="️🚫">
+  采用 虚拟 DOM 不代表性能比操作真实 DOM 更快, 而是最小化 DOM
+  操作实现异步和批量更新, 减少重绘次数, 使得 React 可以以声明式的方式开发,
+  Virtual DOM 在牺牲部分性能的前提下, 增加了可维护性
+  提升开发效率的同时提供还不错的性能。
+</Callout>
 
-React Hooks 的闭包陷阱通常发生在 useEffect 和 useCallback 等钩子函数中, 当它们依赖于某些值时, 可能导致意外的行为, 因为它们会捕获到渲染时闭包中的值, 而不是最新的值。
+##### 什么是 React Fiber ? 原理 ?
+
+> 什么是 fiber node, 怎么和 diff 结合? fiber 如何恢复中断?
+
+- `React 颗粒度不够细, 无法精确更新`, 因此需要 Fiber, Fiber node 添加 child, sibling, parent 三个指针, react fiber 这种数据结构使得节点可以回溯到其父节点, `只要保留下中断的节点索引, 就可以恢复之前的工作进度`
+- 没有 fiber 之前, 也就是 React V15 的时候, 在渲染时, 会递归比对 VirtualDOM 树, 找出需要变动的节点, 然后同步更新它们, 这个过程是需要一口气完成的, , 如果 JS 计算量大造成 Diff 时间太长的话, 占据主线程去做比较, 渲染线程便无法做其他工作页面会卡顿, UI 无响应。
+- 基于 Fiber 的链表结构, 将原来的树形结构(vdom)转换成 Fiber 链表的形式 (child/sibling), 整个 Fiber 的遍历是基于循环而非递归, 可以随时中断和恢复, 根据任务优先级执行紧急的任务, 这样在单位时间内, CSS 渲染的时间变多了, 尽管没有减少 JS 的运行时间, 但解决了页面卡顿的问题。
+
+<Callout type="info" emoji="️ℹ️">
+  react fiber 没法让比较的时间缩短, 但它使得 diff 的过程被分成一小段一小段的,
+  有了“保存工作进度”的能力, 动画变流畅的根本原因, 是一秒内可以获得更多动画帧
+</Callout>
+
+##### React 重新渲染的条件
+
+> React 触发重新渲染的条件有哪些? 重新渲染会做什么?重新渲染的条件:  
+>  关于 React 渲染机制: [React re-renders guide: everything, all at once](https://www.developerway.com/posts/react-re-renders-guide)
+
+- **`state 改变`**: 重新渲染, 生成新的快照；
+- **`父组件重新渲染`**: 当一个组件重新渲染时, 它会重新渲染它的所有子组件；
+- **`Context 改变`**: 当 `Context Provider` 中的值发生更改时, 所有使用此 Context 的组件都将重新渲染, 即使它们不直接使用数据的更改部分；
+- **`hooks 改变`**: hook 内发生的所有事情都‘属于’使用它的组件, 关于 Context 和 State 更改的相同规则适用于此处
+
+<Callout emoji="👾"> **state改变** 是所有重新渲染的“根源”；</Callout>
+
+`当组件的 props 改变时, 就会发生重新渲染`, 这句话其本身是不正确的, 因为要改变 props , 父组件必须会重新渲染, 将导致子组件的重新渲染, 无论其 props 如何
+
+##### 组件的常见性能优化手段
+
+1. **拆小组件**, 这样即便组件重新渲染, 代价也是很小。
+1. **复用组件**, `同一层级, 同一类型, 同一个 key 值, 尽量保证这三者的稳定性`
+1. **减少组件的重新 render**, 重新 render 会导致组件进入协调, 协调的核心就是 `vdom diff`, 非常耗时；如果能够减少协调, 复用旧的 fiber 节点, 会加快渲染的速度, 组件如果没有进入协调阶段, 就会进入 bailout 阶段, 意思就是这层组件退出更新。
+
+- 让组件进入 `bailout` 阶段, 方法有以下这些:
+  - 类组件: 使用 **`PureComponent, shouldComponentUpdate`**
+  - 函数组件: 使用 **`React.memo, useMemo, useCallback`**, 避免改变 Context
+
+##### React 受控组件和非受控组件
+
+- 受控组件是指表单元素的值由 React 组件的状态(state)来控制。这意味着每当用户输入内容时, 对应的状态会更新, 并且由 React 来管理输入框的值。如 `<input> <select> <textearea>` 等组件
+- 非受控组件是指表单元素的值不受 React 组件状态的控制, 而是由 DOM 元素本身来管理, 非受控组件将真实数据储存在 DOM 节点中。通常使用 ref 来获取 DOM 元素的值。 如 复选框 checed
+- React 官方推荐使用受控组件的形式
+  什么是 React Hooks ?原理? 官方给出的使用限制是什么?为什么有这样的限制?
+  hooks 的优点是什么?
+- 没有 hooks 之前, 组件之间只能使用 mixin, Hoc 等手段复用状态逻辑, 代码变得庞大的时候变得难以理解
+- class 组件心智负担更重, 需要理解 this 的工作方式, 事件绑定等等。
+- 更加贴近函数式编程的范式,
+
+##### React 组件如何通信以及不同通信方式的特点
+
+##### 什么是 React hook, hooks 解决了什么问题? hooks 的使用限制？
+
+> React hook 是 React 16.8 引入的新特性, 它可以让你在不编写 class 的情况下使用 state 和其他 React 特性, 它解决了 class 组件的一些问题, 使得函数组件也可以拥有状态和生命周期等特性。
+
+- **解决了 class 组件的一些问题**:
+
+  - 无需为 this 的指向担忧, 无需理解 class 的工作方式, 无需理解生命周期的工作方式
+  - hook 使得函数组件也可以拥有状态和生命周期等特性, 使得代码更加简洁, 逻辑更加清晰,
+  - 复用状态逻辑变得更加容易, **自定义 Hook 使得组件之间的逻辑复用变得更加容易**
+
+- **hooks 使用限制**:
+  1. 只能在 `React 函数顶层`使用, 且不能在 `循环, 条件或嵌套函数` 中调用 Hook
+  2. 自定义 Hooks 必须以 `use 开头`, 这是 React 的规范, 以便于区分普通函数和自定义 Hook
+
+##### Hooks 为什么只能用在 React 函数的最顶层
+
+React 需要依赖调用的顺序来正确保留 Hook 的状态, Hooks 的实现依赖于 React 内部的 Fiber 架构。当组件被渲染时, React 会创建 Fiber 节点树, Hooks 会在这个过程中被调用并与 Fiber 节点关联。这样可以确保每个 Hook 的状态都与特定的组件实例相关联, 而不会混淆不同组件实例之间的状态
+
+##### 为什么 React 不能在条件语句、循环或嵌套函数中使用 中使用 Hooks?
+
+> React 依赖于 Hook 调用的顺序来正确地跟踪组件的状态, 如果 hooks 被包裹循环或条件语句中, 那每就可能会引起调用顺序的错乱, 从而造成意想不到的错误。
+
+React 通过单链表来管理 Hooks, 假设条件判断不成立, 没有执行里面的 useState 方法, 会导致接下来所有的 useState 的取值出现偏移, 从而导致异常发生
+
+##### 自定义组件和自定义 hooks 看上去只有返回值不同, 为什么组件可以在循环和条件中使用, 而 hooks 不行?
+
+> 自定义组件只是一段描述 UI 的 JSX, 用来创建 UI 的, 和其他 JSX 一样都是可复用的 UI 元素;
+> 自定义 Hooks 是一种函数, 用于封装可复用的逻辑, 不能创建可见的 UI 元素。
+
+- 自定义 Hooks 的目的是`共享逻辑而不是渲染 UI`, 因此它们在循环和条件语句中的使用是受限制的。
+- React 需要在内部进行一些特定的操作来管理 Hook 的状态和生命周期, 这些操作只能在 React 组件内部完成。因此, 自定义 Hooks 必须在函数组件的顶层使用, 不能在循环、条件语句或其他 JavaScript 函数中调用。
+
+这些限制对于保证代码正确运行是否是充要条件(一定充分, 但不必要)
+
+这些限制是为了帮助开发者编写更可靠、更易于理解和维护的代码, 尤其是在涉及到状态管理和组件生命周期时。
+通过强制这些限制, React 可以更好地跟踪组件状态和生命周期, 确保状态的一致性, 避免出现难以追踪和排查的错误。
+然而, 并不是所有不符合这些限制的代码都是错误的。
+
+##### useEffect 第二个参数如何使用？模拟生命周期？
+
+```ts
+type DependecnyList = ReadonlyArray<any>;
+function useEffect(effect: EffectCallback, deps?: DependencyList): void;
+```
+
+- 参数一是一个回调函数, 是组件要执行的副作用。返回的函数会在下一次 useEffect 执行之前执行, 即在组件重新渲染之前执行
+- 参数二是一个依赖项数组, 数组里面依赖改变时候副作用函数才会重新执行, 可以不传, 空数组,
+  - `不传`, 每次组件更新都会执行副作用函数, useEffect 会在第一次渲染以及每次更新渲染后都执行, 不建议这么做
+  - `传入空数组`, 副作用函数只会在组件挂载和卸载时执行, useEffect 会在第一次渲染后执行一次, 并且在组件卸载时执行清理函数
+  - `传入依赖项数组`, 只有依赖项发生变化时, 副作用函数才会重新执行, useEffect 会在第一次渲染以及每次依赖项更新渲染后都执行
+
+```jsx
+// 1. 模拟 componentDidMount, 传入空数组
+const Home: React.FC<Iprops> = () => {
+  useEffect(() => {
+    getList(); // 调用方法发起异步请求
+  }, []);
+
+  return <div> hello world </div>;
+};
+
+// 2. 模拟 componentDidUpdate, 传入依赖项数组
+const Home: React.FC<Iprops> = () => {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    getList(); // 调用发起异步请求
+  }, [count]); // 仅在count更改时更新
+  return <div>hello world</div>;
+};
+
+// 3. 模拟 componentWillUnmount, 第一个参数返回清理函数
+useEffect(() => {
+  getList();
+  return () => {
+    console.log("组件注销, 实现componentWillUnmount");
+  };
+}, []);
+```
+
+##### useEffect 和 useLayoutEffect 区别 ?
+
+`useEffect` 中的回调函数会在组件渲染完成后执行, `useLayoutEffect` 中的回调函数会在浏览器执行绘制之前立即同步执行
+
+- Dom 时间, 一个在之前, 一个之后, useLayoutEffect 会阻塞浏览器渲染, 切记执行同步的耗时操作
+- useLayoutEffect 要比 useEffect 更早的触发执行
+- useLayoutEffect 会阻塞浏览器渲染, 切记执行同步的耗时操作
+
+##### useEffect 中如何使用 async/await
+
+##### 讲讲 React Hooks 的闭包陷阱, 你是怎么解决的?
+
+`React Hooks` 的闭包陷阱通常发生在 useEffect 和 useCallback 等钩子函数中, 当它们依赖于某些值时, 可能导致意外的行为, 因为它们会捕获到渲染时闭包中的值, 而不是最新的值。
 
 ```jsx
 import React, { useState, useEffect } from "react";
@@ -94,112 +249,266 @@ export default Counter;
 
 我们使用了 setCount 的回调形式来更新 count, 以确保在每次更新时都使用最新的 count 值。同时, 我们将 count 作为 useEffect 的依赖项传入, 以确保 useEffect 在 count 更新时触发。这样就避免了闭包陷阱, 确保了组件行为的正确性。
 
-##### React 受控组件和非受控组件
-
-- 受控组件是指表单元素的值由 React 组件的状态(state)来控制。这意味着每当用户输入内容时, 对应的状态会更新, 并且由 React 来管理输入框的值。如 `<input> <select> <textearea>` 等组件
-- 非受控组件是指表单元素的值不受 React 组件状态的控制, 而是由 DOM 元素本身来管理, 非受控组件将真实数据储存在 DOM 节点中。通常使用 ref 来获取 DOM 元素的值。 如 复选框 checed
-- React 官方推荐使用受控组件的形式
-  什么是 React Hooks ？原理? 官方给出的使用限制是什么？为什么有这样的限制？
-  hooks 的优点是什么？
-- 没有 hooks 之前, 组件之间只能使用 mixin, Hoc 等手段复用状态逻辑, 代码变得庞大的时候变得难以理解
-- class 组件心智负担更重, 需要理解 this 的工作方式, 事件绑定等等。
-- 更加贴近函数式编程的范式,
-
-##### hooks 的使用限制
-
-1. 只能在 React 函数顶层使用, 且不能在 循环, 条件或嵌套函数中调用 Hook
-   Hooks 的实现依赖于 React 内部的 Fiber 架构。当组件被渲染时, React 会创建 Fiber 节点树, Hooks 会在这个过程中被调用并与 Fiber 节点关联。这样可以确保每个 Hook 的状态都与特定的组件实例相关联, 而不会混淆不同组件实例之间的状态, React 依赖于 Hook 调用的顺序来正确地跟踪组件的状态, 如果 hooks 被包裹循环或条件语句中, 那每就可能会引起调用顺序的错乱, 从而造成意想不到的错误。。
-   自定义组件和自定义 hooks 看上去只有返回值不同, 为什么组件可以在循环和条件中使用, 而 hooks 不行？
-   自定义组件只是一段描述 UI 的 JSX, 用来创建 UI 的, 和其他 JSX 一样都是可复用的 UI 元素; 而自定义 Hooks 是一种函数, 用于封装可复用的逻辑, 不能创建可见的 UI 元素。
-   自定义 Hooks 的目的是共享逻辑而不是渲染 UI, 因此它们在循环和条件语句中的使用是受限制的。React 需要在内部进行一些特定的操作来管理 Hook 的状态和生命周期, 这些操作只能在 React 组件内部完成。因此, 自定义 Hooks 必须在函数组件的顶层使用, 不能在循环、条件语句或其他 JavaScript 函数中调用。
-   这些限制对于保证代码正确运行是否是充要条件(一定充分, 但不必要)
-   是充分条件, 但并不是必要条件
-   这些限制是为了帮助开发者编写更可靠、更易于理解和维护的代码, 尤其是在涉及到状态管理和组件生命周期时。
-   通过强制这些限制, React 可以更好地跟踪组件状态和生命周期, 确保状态的一致性, 避免出现难以追踪和排查的错误。
-   然而, 并不是所有不符合这些限制的代码都是错误的。
-
-##### useEffect 和 useLayoutEffect 区别 ？
-
-useEffect 中的回调函数会在组件渲染完成后执行, useLayoutEffect 中的回调函数会在浏览器执行绘制之前立即同步执行
-
-- Dom 时间, 一个在之前, 一个之后, useLayoutEffect 会阻塞浏览器渲染, 切记执行同步的耗时操作
-- useLayoutEffect 要比 useEffect 更早的触发执行
-- useLayoutEffect 会阻塞浏览器渲染, 切记执行同步的耗时操作
-  什么是 virtual DOM, 有什么优缺点？
-  优点:
-- 跨平台, 虚拟 DOM 只是一个对象, 可以渲染到 DOM 以外的端, 这样 React 除了 web 还可以写 native
-- Virtual DOM 在牺牲(牺牲很关键)部分性能的前提下, 增加了可维护性, 这也是很多框架的通性。 实现了对 DOM 的集中化操作, 在数据改变时先对虚拟 DOM 进行修改, 再反映到真实的 DOM 中, 用最小的代价来更新 DOM, 提高效率(提升效率要想想是跟哪个阶段比提升了效率, 别只记住了这一条)
-  缺点:
-- 首次渲染大量 DOM 时, 由于多了一层虚拟 DOM 的计算, 会比 innerHTML 插入慢
-- 虚拟 DOM 需要在内存中的维护一份 DOM 的副本(更上面一条其实也差不多, 上面一条是从速度上, 这条是空间上)。
-- 如果虚拟 DOM 大量更改, 这是合适的。但是单一的, 频繁的更新的话, 虚拟 DOM 将会花费更多的时间处理计算的工作。所以, 如果你有一个 DOM 节点相对较少页面, 用虚拟 DOM, 它实际上有可能会更慢。但对于大多数单页面应用, 这应该都会更快。
-
-##### React fiber 原理
-
-什么是 fiber node, 怎么和 diff 结合？fiber 如何恢复中断？ - react fiber 没法让比较的时间缩短, 但它使得 diff 的过程被分成一小段一小段的, 但有了“保存工作进度”的能力, 动画变流畅的根本原因, 是一秒内可以获得更多动画帧
-
-- React 颗粒度不够细, 无法精确更新, 需要 Fiber, Fiber node 添加 child, sibling, parent 三个指针, react fiber 这种数据结构使得节点可以回溯到其父节点, 只要保留下中断的节点索引, 就可以恢复之前的工作进度
-  没有 fiber 之前, 也就是 React V15 的时候, 在渲染时, 会递归比对 VirtualDOM 树, 找出需要变动的节点, 然后同步更新它们, 这个过程是需要一口气完成的, , 如果 JS 计算量大造成 Diff 时间太长的话, 占据主线程去做比较, 渲染线程便无法做其他工作页面会卡顿, UI 无响应。 基于 Fiber 的链表结构, 将原来的树形结构(vdom)转换成 Fiber 链表的形式 (child/sibling), 整个 Fiber 的遍历是基于循环而非递归, 可以随时中断和恢复, 根据任务优先级执行紧急的任务, 这样在单位时间内, CSS 渲染的时间变多了, 尽管没有减少 JS 的运行时间, 但解决了页面卡顿的问题。
-
 ##### React 列表中的 key 的作用 ? key 的选取有啥限制条件?
+
+> key 帮助 React 识别哪些元素改变了, 例如被添加或删除。这样 React 可以在重新渲染时只更新改变的元素, 而不是每次都重新渲染整个列表。
+
+- key 的选择有以下几个注意事项:
+  - **唯一性**: 在同一个列表中, key 需要是唯一的, 不需要在全局都是唯一的。
+  - **稳定性**: key 应该是稳定的, 它们不应该在不同的渲染中改变。
+    - 不推荐使用索引作为 key:如果列表项的顺序可能会改变, 那么不推荐使用元素的索引作为 key。因为这可能会导致性能下降, 或者状态管理出现问题。如果列表不会进行重新排序, 且不包含状态, 那么在没有更好的选择时, 可以使用索引作为 key。
+    - 不推荐使用随机值作为 key:每次渲染都使用新的随机值作为 key, 这会导致组件状态和生命周期无法正确工作, 并且会导致组件不必要的重新渲染, 从而降低性能。
+
+最好的选择通常是使用数据本身的唯一标识作为 key, 例如数据项的 id。
 
 ##### React Portal 有哪些使用场景?
 
+> React Portal 提供了一种**将子节点渲染到存在于父组件 DOM 结构之外的 DOM 节点的方法**。这非常有用, 因为有时我们需要子组件从样式或层级结构上“跳出”其父组件。以下是一些常见的使用场景:
+
+- 模态对话框(Modal): 这可能是 React Portal 最常见的用途。模态对话框通常需要覆盖应用程序的其他部分, 而且从样式和功能上看, 它们通常与其父组件没有太大的关联。使用 Portal 可以使模态对话框从其父组件“跳出”, 并能够覆盖应用程序的其他部分。
+- 提示框(Tooltips): 当我们希望显示一个提示框, 而这个提示框需要在页面上的一个特定位置显示时, Portal 非常有用。这样, 提示框就可以独立于其父组件的位置进行定位。
+- 下拉菜单: 下拉菜单是另一个常见的使用场景。下拉菜单通常需要从其触发器的位置“弹出”, 并且可能会覆盖其父组件的其他部分。使用 Portal 可以使下拉菜单独立于其父组件进行定位和渲染。
+- 全局通知或消息: 如果你需要在页面的某个位置显示全局通知或消息, 而这个位置并不依赖于特定的父组件, 那么 Portal 也是一个好的选择。
+
+总的来说, 任何需要独立于父组件进行定位或渲染的组件, 或者需要“跳出”父组件的组件, 都可以考虑使用 React Portal。
+
 ##### React custom hooks 如何实现? 作用?
 
-##### 使用过 useMemo 和 useCallback 吗?
+> 自定义 Hook 是一个函数, 其名称以 “use” 开头, 函数内部可以调用其他的 Hook。自定义 Hook 应该是一个纯函数, 它不应该包含任何副作用, 也不应该返回任何副作用。
 
-React.useMemo 与 React.useCallback 是如何进行性能优化的?
+自定义 Hook 的作用:
 
-##### useEffect 中如何使用 async/await
+- **逻辑复用**: 自定义 Hook 可以让你在不增加组件的情况下复用状态逻辑, 使得组件更加简洁和易于理解。
+- **副作用抽离**: 自定义 Hook 可以将组件中的副作用逻辑抽离出来, 使得组件更加纯粹, 逻辑更加清晰。
 
-##### React.forwardRef 是什么？它有什么作用？
+```jsx
+import { useState, useEffect } from "react";
 
-在 React 19 中, 这个 API 将会被删除。 通常来说, React.forwardRef 会创建一个 React 组件, 这个组件能够将其接受的 ref 属性转发到其组件树下的另一个组件中。这种技术并不常见, 但在以下两种场景中特别有用：
+function useFetch(url) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const result = await response.json();
+        setData(result);
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, [url]);
+
+  return { data, loading };
+}
+
+export default useFetch;
+```
+
+##### 使用过 useMemo 和 useCallback 吗? 它们性能优化的原理？
+
+- **useMemo**: 用于缓存计算结果, 只有依赖项发生变化时, 才会重新计算, 从而避免不必要的计算开销。
+- **useCallback**: 用于缓存函数, 只有依赖项发生变化时, 才会重新创建函数, 从而避免不必要的函数创建开销。
+
+```jsx
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+const memoizedCallback = useCallback(() => {
+  doSomething(a, b);
+}, [a, b]);
+```
+
+- **useMemo 的原理**: useMemo 会在组件渲染时执行, 它会缓存计算结果, 并且只有在依赖项发生变化时, 才会重新计算。useMemo 的返回值是缓存的计算结果, 它会在组件重新渲染时返回, 从而避免不必要的计算开销。
+- **useCallback 的原理**: useCallback 会在组件渲染时执行, 它会缓存函数, 并且只有在依赖项发生变化时, 才会重新创建函数。useCallback 的返回值是缓存的函数, 它会在组件重新渲染时返回, 从而避免不必要的函数创建开销。
+
+##### React.forwardRef 是什么?它有什么作用?
+
+在 React 19 中, 这个 API 将会被删除。 通常来说, React.forwardRef 会创建一个 React 组件, 这个组件能够将其接受的 ref 属性转发到其组件树下的另一个组件中。这种技术并不常见, 但在以下两种场景中特别有用:
 
 - 转发 refs 到 DOM 组件
 - 在高阶组件中转发 refs
 
 ##### 什么是服务器渲染 (SSR)? 和 SPA 进行对比分析, 各自的优缺点
 
-https://web.dev/rendering-on-the-web/
+> 拓展阅读: https://web.dev/rendering-on-the-web/
 
-##### 什么是流式服务端渲染？
+SSR(服务端渲染):是指在服务器上生成应用程序的 HTML, 然后发送到客户端的技术。这意味着服务器会为每个请求生成一个完整的 HTML 页面
 
-##### 什么是合成事件
+SPA(单页面应用):则是在客户端渲染页面的技术。在 SPA 中, 服务器只发送一个 HTML 文件, 然后所有的渲染都在客户端(浏览器)完成。
 
-##### 什么是 Hooks, Hooks 解决了什么问题(好处)?
+**服务器渲染(SSR)**
 
-##### Hooks 为什么只能用在 React 函数的最顶层
+优点:
 
-##### useState 和 useReducer 为什么返回一个数组
+1. **更好的 SEO**: 由于搜索引擎爬虫可以直接抓取服务器渲染的完整 HTML, 因此 SSR 对于 SEO 更有利。
+2. **更快的首屏加载时间**: 用户可以更快地看到首屏的内容, 因为首屏的 HTML 是由服务器生成的, 不需要等待 JavaScript 的下载和执行。
 
-##### 什么是 Fiber ?
+缺点:
 
-##### Context 使用方法 ?讲述 Context 原理?
+1. **服务器压力大**: 由于服务器需要为每个请求生成完整的 HTML, 这可能导致服务器压力大。
+2. **全页刷新**: 每次页面跳转或者数据更新, 都需要服务器重新渲染整个页面, 用户体验可能较差。
 
-##### 什么是虚拟 DOM, 好处有什么,
+**单页面应用(SPA)**
 
-##### 在循环渲染多个组件的时候, key 如何取值,
+优点:
 
-##### 组件的常见性能优化手段, 组件如何通信以及不同通信方式的特点
+1. **快速的页面切换**: 由于所有的渲染都在客户端完成, 页面之间的切换可以非常快速, 不需要重新加载整个页面。
+2. **服务器压力小**: 服务器只需要处理 API 请求, 不需要渲染 HTML, 因此服务器压力小。
+   缺点:
+3. **首屏加载时间可能较长**: 用户需要等待所有的 JavaScript 下载和执行完成后才能看到首屏的内容。
+4. **SEO 不友好**: 虽然现代的搜索引擎爬虫已经可以处理 JavaScript, 但是 SPA 对于 SEO 仍然不如 SSR。
 
-##### 什么是 JSX ? Babel 编译原理
+总的来说, SSR 和 SPA 各有优缺点, 适用于不同的场景。你应该根据你的应用的需求来选择最合适的技术。
 
-##### 什么是自定义 hook
+##### 什么是流式服务端渲染?
+
+> 流式服务器端渲染(Streaming Server Side Rendering,SSR)是一种优化的服务器端渲染技术。
+
+在传统的服务器端渲染(SSR)中,服务器需要等待整个页面生成完成后, 再一次性将 HTML 发送给客户端。而在流式服务器端渲染中,服务器会在生成 HTML 的同时,逐块地将其发送给客户端。这样,客户端可以在接收到 HTML 的第一部分时就开始解析和渲染,而不需要等待整个页面生成完成。
+
+流式服务器端渲染的优点包括:
+
+1. **更快的首屏渲染**: 由于客户端可以在接收到 HTML 的第一部分时就开始解析和渲染,因此用户可以更早地看到首屏的内容。
+
+2. **更好的用户体验**: 用户不需要等待整个页面生成完成,可以更早地开始与页面进行交互。
+
+3. **更高的服务器吞吐量**: 由于服务器不需要等待整个页面生成完成,可以更早地开始处理下一个请求,因此服务器的吞吐量可能会更高。
+
+需要注意的是,虽然流式服务器端渲染有很多优点,但是它也更复杂,可能需要更多的服务器资源。此外,由于 HTML 是逐块发送的,因此可能需要更复杂的客户端逻辑来处理部分接收的 HTML。
+
+##### useState 和 useReducer 为什么返回一个数组? 而不是对象？
+
+> useState 和 useReducer 都是 React 提供的 Hook, 它们都返回一个数组, 这是因为它们都是基于数组的解构赋值来使用的。
+
+```jsx
+const [state, setState] = useState(initialState);
+const [state, dispatch] = useReducer(reducer, initialState);
+```
+
+- **useState**: useState 返回一个数组, 数组的第一个元素是状态值, 第二个元素是更新状态的函数。
+- **useReducer**: useReducer 返回一个数组, 数组的第一个元素是状态值, 第二个元素是 dispatch 函数。
+
+如果使用对象, 需要担心对象属性的名称, 而如果返回数组, 则可以使用数组的解构赋值来使用它们, 自由地为这些值命名， 更易于使用和理解。
 
 ##### useState 和 useReducer 区别?各自的原理
 
-##### useEffect 和 useLayout 区别?
+`useState` 和 `useReducer` 都是 React Hooks，可以在函数组件中使用它们来管理状态。它们的主要区别在于复杂性和用途。
 
-##### useEffect 的第二个参数怎么用?
+`useState` 是一个用于管理组件状态的 Hook。它接受一个参数，这是状态的初始值，然后返回一个包含两个元素的数组: 当前状态和一个用于更新状态的函数。当你调用这个更新函数时，组件会重新渲染，并使用新的状态值。
+
+这是一个 `useState` 的例子:
+
+```jsx
+const [count, setCount] = useState(0);
+
+// 更新状态
+setCount(count + 1);
+```
+
+`useReducer` 是一个更复杂的状态管理 Hook，它接受一个 reducer 函数和状态的初始值作为参数，然后返回一个包含两个元素的数组: 当前状态和一个 dispatch 函数。你可以调用 dispatch 函数来发送一个 action，这个 action 会被传递到 reducer 函数，然后 reducer 函数会根据这个 action 来计算新的状态。
+
+这是一个 `useReducer` 的例子:
+
+```jsx
+const initialState = { count: 0 };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "increment":
+      return { count: state.count + 1 };
+    case "decrement":
+      return { count: state.count - 1 };
+    default:
+      throw new Error();
+  }
+}
+
+const [state, dispatch] = useReducer(reducer, initialState);
+
+// 更新状态
+dispatch({ type: "increment" });
+```
+
+`useState` 是用于管理简单状态的最佳选择，而 `useReducer` 更适合管理复杂的状态逻辑，或者当下一个状态依赖于之前的状态时。此外，`useReducer` 还使你能够将更新逻辑提取出来，使你的组件更易于理解和测试。
+
+##### Context 使用方法 ?讲述 Context 原理?
+
+> Context 提供了一种在组件之间共享数据的方法, 而不必通过组件树的逐层传递 props。Context 主要由两部分组成: `Provider` 和 `Consumer`。
+
+- **Provider**: 用于提供共享的数据, 并且可以通过 value 属性传递数据。
+- **Consumer**: 用于消费共享的数据, 并且可以通过嵌套函数的方式来消费数据。
+
+useContext 是一个读取 Context 的 hook
+
+```jsx
+// 创建一个 Context
+const MyContext = React.createContext();
+
+// 使用 Provider 提供共享的数据
+<MyContext.Provider value={/* 共享的数据 */}>
+  <Child />
+</MyContext.Provider>;
+
+// 使用 Consumer 消费共享的数据
+<MyContext.Consumer>
+  {(value) => /* 渲染共享的数据 */}
+</MyContext.Consumer>;
+
+// 使用 useContext 消费共享的数据
+const value = useContext(MyContext);
+```
 
 ##### useState 和 useRef 区别? useRef 作用?
 
+`useState` 和 `useRef` 都是 React Hooks，但它们的用途和行为方式有所不同。
+
+`useState` 用于在函数组件中管理状态。它返回一个包含两个元素的数组: 当前状态和一个用于更新状态的函数。当状态更新时，组件会重新渲染。
+
+`useRef` 用于获取 React 元素或 DOM 节点的引用，或者保存任何可变值，这个值在组件的整个生命周期内都可以保持不变。`useRef` 返回一个可变的 ref 对象，其 `.current` 属性被初始化为传入的参数(或默认为 `null`)。这个对象在组件的整个生命周期内保持不变。
+
+`useRef` 的主要用途有两个:
+
+1. **访问 DOM 节点**: 当你需要从 JavaScript 代码中直接操作 DOM 节点时，可以使用 `useRef`。例如，你可能需要测量一个元素的大小，或者手动设置焦点。
+
+2. **保存可变值**: `useRef` 也可以用于保存任何可变值。与“普通”变量不同，ref 在组件重新渲染时不会丢失它的值，并且更改 ref 的值不会导致组件重新渲染。
+
+这是一个 `useRef` 的例子:
+
+```jsx
+const inputEl = useRef(null);
+
+const onButtonClick = () => {
+  // `current` 指向了真实的 input 元素
+  inputEl.current.focus();
+};
+
+return (
+  <>
+    <input ref={inputEl} type="text" />
+    <button onClick={onButtonClick}>Focus the input</button>
+  </>
+);
+```
+
+总的来说，`useState` 用于在组件重新渲染时保存和更改状态，而 `useRef` 用于在组件的整个生命周期内保存和更改值，但不会引起组件的重新渲染。
+
 ##### React 的任务调度机制
 
-##### React 的事件机制
+React 的任务调度机制是基于 React 的核心算法 -- "Reconciliation"(协调)和 "Fiber Architecture"(Fiber 架构)的。
 
-##### 为什么 React 不能在条件判断中使用 Hooks?
+在 React 16 中引入了 Fiber 架构，它为 React 提供了一种新的协调引擎。Fiber 的目标是提高 React 在大型应用中的性能，并使其能够更好地处理动画、布局和手势等任务。
 
-React 通过单链表来管理 Hooks, 假设条件判断不成立, 没有执行里面的 useState 方法, 会导致接下来所有的 useState 的取值出现偏移, 从而导致异常发生
+Fiber 架构引入了两个主要的概念: Fiber 节点和任务调度。
+
+1. **Fiber 节点**: 在 Fiber 架构中，每个 React 组件都有一个或多个与之关联的 Fiber 节点。这些节点构成了一个工作单元的树结构，React 通过遍历这个树来执行渲染工作。
+
+2. **任务调度**: Fiber 架构的一个关键特性是能够将渲染工作拆分成多个小任务，并根据优先级来调度这些任务。这样，React 可以优先执行高优先级的任务(如用户输入或动画)，并在有空闲时间时执行低优先级的任务(如网络请求的结果)。
+
+React 通过一个名为 `requestIdleCallback` 的浏览器 API 来实现这种调度机制。当浏览器处于空闲状态时，`requestIdleCallback` 会被调用，React 则利用这个时间来执行低优先级的任务。
+
+然而，`requestIdleCallback` 在所有浏览器中并不都有支持，所以 React 实现了一个自己的调度库，称为 `scheduler`。这个库提供了一个类似 `requestIdleCallback` 的 API，但在所有浏览器中都能稳定运行。
+
+这种任务调度机制使 React 能够更有效地管理资源，并确保用户界面的流畅性和响应性。
