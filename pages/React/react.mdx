@@ -309,6 +309,12 @@ function useFetch(url) {
 export default useFetch;
 ```
 
+##### React.memo 中是如何实现性能优化的?
+
+当 React 中一个组件进行更新时, 它的所有子组件都会进行重新渲染, 即便子组件的 props 并未发生任何改变。
+
+React.memo 对子组件默认使用浅比较对比前后两次 props 的变更, 若未发生变更则不会重新渲染, 因此提高了性能。
+
 ##### 使用过 useMemo 和 useCallback 吗? 它们性能优化的原理？
 
 - **useMemo**: 用于缓存计算结果, 只有依赖项发生变化时, 才会重新计算, 从而避免不必要的计算开销。
@@ -391,13 +397,13 @@ const [state, dispatch] = useReducer(reducer, initialState);
 - **useState**: useState 返回一个数组, 数组的第一个元素是状态值, 第二个元素是更新状态的函数。
 - **useReducer**: useReducer 返回一个数组, 数组的第一个元素是状态值, 第二个元素是 dispatch 函数。
 
-如果使用对象, 需要担心对象属性的名称, 而如果返回数组, 则可以使用数组的解构赋值来使用它们, 自由地为这些值命名， 更易于使用和理解。
+如果使用对象, 需要担心对象属性的名称, 而如果返回数组, 则可以使用数组的解构赋值来使用它们, 自由地为这些值命名, 更易于使用和理解。
 
 ##### useState 和 useReducer 区别?各自的原理
 
-`useState` 和 `useReducer` 都是 React Hooks，可以在函数组件中使用它们来管理状态。它们的主要区别在于复杂性和用途。
+`useState` 和 `useReducer` 都是 React Hooks,可以在函数组件中使用它们来管理状态。它们的主要区别在于复杂性和用途。
 
-`useState` 是一个用于管理组件状态的 Hook。它接受一个参数，这是状态的初始值，然后返回一个包含两个元素的数组: 当前状态和一个用于更新状态的函数。当你调用这个更新函数时，组件会重新渲染，并使用新的状态值。
+`useState` 是一个用于管理组件状态的 Hook。它接受一个参数,这是状态的初始值,然后返回一个包含两个元素的数组: 当前状态和一个用于更新状态的函数。当你调用这个更新函数时,组件会重新渲染,并使用新的状态值。
 
 这是一个 `useState` 的例子:
 
@@ -408,7 +414,7 @@ const [count, setCount] = useState(0);
 setCount(count + 1);
 ```
 
-`useReducer` 是一个更复杂的状态管理 Hook，它接受一个 reducer 函数和状态的初始值作为参数，然后返回一个包含两个元素的数组: 当前状态和一个 dispatch 函数。你可以调用 dispatch 函数来发送一个 action，这个 action 会被传递到 reducer 函数，然后 reducer 函数会根据这个 action 来计算新的状态。
+`useReducer` 是一个更复杂的状态管理 Hook,它接受一个 reducer 函数和状态的初始值作为参数,然后返回一个包含两个元素的数组: 当前状态和一个 dispatch 函数。你可以调用 dispatch 函数来发送一个 action,这个 action 会被传递到 reducer 函数,然后 reducer 函数会根据这个 action 来计算新的状态。
 
 这是一个 `useReducer` 的例子:
 
@@ -432,7 +438,7 @@ const [state, dispatch] = useReducer(reducer, initialState);
 dispatch({ type: "increment" });
 ```
 
-`useState` 是用于管理简单状态的最佳选择，而 `useReducer` 更适合管理复杂的状态逻辑，或者当下一个状态依赖于之前的状态时。此外，`useReducer` 还使你能够将更新逻辑提取出来，使你的组件更易于理解和测试。
+`useState` 是用于管理简单状态的最佳选择,而 `useReducer` 更适合管理复杂的状态逻辑,或者当下一个状态依赖于之前的状态时。此外,`useReducer` 还使你能够将更新逻辑提取出来,使你的组件更易于理解和测试。
 
 ##### Context 使用方法 ?讲述 Context 原理?
 
@@ -463,17 +469,17 @@ const value = useContext(MyContext);
 
 ##### useState 和 useRef 区别? useRef 作用?
 
-`useState` 和 `useRef` 都是 React Hooks，但它们的用途和行为方式有所不同。
+`useState` 和 `useRef` 都是 React Hooks,但它们的用途和行为方式有所不同。
 
-`useState` 用于在函数组件中管理状态。它返回一个包含两个元素的数组: 当前状态和一个用于更新状态的函数。当状态更新时，组件会重新渲染。
+`useState` 用于在函数组件中管理状态。它返回一个包含两个元素的数组: 当前状态和一个用于更新状态的函数。当状态更新时,组件会重新渲染。
 
-`useRef` 用于获取 React 元素或 DOM 节点的引用，或者保存任何可变值，这个值在组件的整个生命周期内都可以保持不变。`useRef` 返回一个可变的 ref 对象，其 `.current` 属性被初始化为传入的参数(或默认为 `null`)。这个对象在组件的整个生命周期内保持不变。
+`useRef` 用于获取 React 元素或 DOM 节点的引用,或者保存任何可变值,这个值在组件的整个生命周期内都可以保持不变。`useRef` 返回一个可变的 ref 对象,其 `.current` 属性被初始化为传入的参数(或默认为 `null`)。这个对象在组件的整个生命周期内保持不变。
 
 `useRef` 的主要用途有两个:
 
-1. **访问 DOM 节点**: 当你需要从 JavaScript 代码中直接操作 DOM 节点时，可以使用 `useRef`。例如，你可能需要测量一个元素的大小，或者手动设置焦点。
+1. **访问 DOM 节点**: 当你需要从 JavaScript 代码中直接操作 DOM 节点时,可以使用 `useRef`。例如,你可能需要测量一个元素的大小,或者手动设置焦点。
 
-2. **保存可变值**: `useRef` 也可以用于保存任何可变值。与“普通”变量不同，ref 在组件重新渲染时不会丢失它的值，并且更改 ref 的值不会导致组件重新渲染。
+2. **保存可变值**: `useRef` 也可以用于保存任何可变值。与“普通”变量不同,ref 在组件重新渲染时不会丢失它的值,并且更改 ref 的值不会导致组件重新渲染。
 
 这是一个 `useRef` 的例子:
 
@@ -493,22 +499,22 @@ return (
 );
 ```
 
-总的来说，`useState` 用于在组件重新渲染时保存和更改状态，而 `useRef` 用于在组件的整个生命周期内保存和更改值，但不会引起组件的重新渲染。
+总的来说,`useState` 用于在组件重新渲染时保存和更改状态,而 `useRef` 用于在组件的整个生命周期内保存和更改值,但不会引起组件的重新渲染。
 
 ##### React 的任务调度机制
 
 React 的任务调度机制是基于 React 的核心算法 -- "Reconciliation"(协调)和 "Fiber Architecture"(Fiber 架构)的。
 
-在 React 16 中引入了 Fiber 架构，它为 React 提供了一种新的协调引擎。Fiber 的目标是提高 React 在大型应用中的性能，并使其能够更好地处理动画、布局和手势等任务。
+在 React 16 中引入了 Fiber 架构,它为 React 提供了一种新的协调引擎。Fiber 的目标是提高 React 在大型应用中的性能,并使其能够更好地处理动画、布局和手势等任务。
 
 Fiber 架构引入了两个主要的概念: Fiber 节点和任务调度。
 
-1. **Fiber 节点**: 在 Fiber 架构中，每个 React 组件都有一个或多个与之关联的 Fiber 节点。这些节点构成了一个工作单元的树结构，React 通过遍历这个树来执行渲染工作。
+1. **Fiber 节点**: 在 Fiber 架构中,每个 React 组件都有一个或多个与之关联的 Fiber 节点。这些节点构成了一个工作单元的树结构,React 通过遍历这个树来执行渲染工作。
 
-2. **任务调度**: Fiber 架构的一个关键特性是能够将渲染工作拆分成多个小任务，并根据优先级来调度这些任务。这样，React 可以优先执行高优先级的任务(如用户输入或动画)，并在有空闲时间时执行低优先级的任务(如网络请求的结果)。
+2. **任务调度**: Fiber 架构的一个关键特性是能够将渲染工作拆分成多个小任务,并根据优先级来调度这些任务。这样,React 可以优先执行高优先级的任务(如用户输入或动画),并在有空闲时间时执行低优先级的任务(如网络请求的结果)。
 
-React 通过一个名为 `requestIdleCallback` 的浏览器 API 来实现这种调度机制。当浏览器处于空闲状态时，`requestIdleCallback` 会被调用，React 则利用这个时间来执行低优先级的任务。
+React 通过一个名为 `requestIdleCallback` 的浏览器 API 来实现这种调度机制。当浏览器处于空闲状态时,`requestIdleCallback` 会被调用,React 则利用这个时间来执行低优先级的任务。
 
-然而，`requestIdleCallback` 在所有浏览器中并不都有支持，所以 React 实现了一个自己的调度库，称为 `scheduler`。这个库提供了一个类似 `requestIdleCallback` 的 API，但在所有浏览器中都能稳定运行。
+然而,`requestIdleCallback` 在所有浏览器中并不都有支持,所以 React 实现了一个自己的调度库,称为 `scheduler`。这个库提供了一个类似 `requestIdleCallback` 的 API,但在所有浏览器中都能稳定运行。
 
-这种任务调度机制使 React 能够更有效地管理资源，并确保用户界面的流畅性和响应性。
+这种任务调度机制使 React 能够更有效地管理资源,并确保用户界面的流畅性和响应性。
