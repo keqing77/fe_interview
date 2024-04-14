@@ -22,11 +22,11 @@
 
 ##### 什么是闭包？作用
 
-闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。
+闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式, 就是在一个函数内部创建另一个函数。
 
 作用：
 
-- 读取函数内部的变量，让这些变量的值始终保持在内存中
+- 读取函数内部的变量, 让这些变量的值始终保持在内存中
 - 保存私有变量
 
 ##### iframe 的优缺点？
@@ -71,3 +71,49 @@
 - 使用 Chrome 的开发者工具的 Memory 面板
 - 使用 Chrome 的开发者工具的 Performance 面板
 - 使用 Node.js 的内存监控工具
+
+##### CommonJS 和 ES6 模块的区别？
+
+CommonJS 模块是运行时加载, ES6 Modules 是编译时输出接口
+CommonJS 输出是值的拷贝；ES6 Modules 输出的是值的引用, 被输出模块的内部的改变会影响引用的改变
+CommonJs 导入的模块路径可以是一个表达式, 因为它使用的是 require()方法；而 ES6 Modules 只能是字符串
+CommonJS this 指向当前模块, ES6 Modules this 指向 undefined
+且 ES6 Modules 中没有这些顶层变量：arguments、require、module、exports、**filename、**dirname
+
+##### 在移动端中怎样初始化根元素的字体大小？
+
+##### requestAnimationFrame 和 setTimeout 区别？
+
+requestAnimationFrame 是浏览器用于定时循环操作的一个接口, 类似于 setTimeout, 主要用途是按帧对网页进行重绘。对于 JS 动画, 用 requestAnimationFrame 会比 setInterval 效果更好。
+
+##### 可迭代对象有哪些特点
+
+ES6 规定, 默认的 Iterator 接口部署在数据结构的 `Symbol.iterator` 属性, 换个角度, 也可以认为, 一个数据结构只要具有 `Symbol.iterator` 属性(Symbol.iterator 方法对应的是遍历器生成函数, 返回的是一个遍历器对象), 那么就可以其认为是可迭代的。
+
+- 可迭代对象的特点：
+
+  - 具有 Symbol.iterator 属性, Symbol.iterator() 返回的是一个遍历器对象
+  - 可以使用 for ... of 进行循环
+  - 通过被 Array.from 转换为数组
+
+- 原生具有 Iterator 接口的数据结构：
+  - Array
+  - Map
+  - Set
+  - String
+  - TypedArray
+  - 函数的 arguments 对象
+  - NodeList 对象
+
+##### 表单可以跨域吗？
+
+表单可以跨域, 但是需要服务器端设置允许跨域, 通常是设置响应头 Access-Control-Allow-Origin
+
+##### 使用 js 如何改变 url, 并且页面不刷新
+
+改变 URL 的目的是让 js 拿到不同的参数, 进行不同的页面渲染, 其实就是 router 的原理
+
+- 最简单的就是改变 hash, 改变 hash 是并不会刷新页面的, 也会改变 URL, 也能监听 hashchange 事件进行页面的渲染
+- 还有一种就是使用 HTML5 的 history.pushState() 方法, 该方法也可以改变 url 然后不刷新页面。
+
+##### js 定时器为什么是不精确的?
