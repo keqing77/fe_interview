@@ -198,7 +198,7 @@
 
 ### day50:
 
-4.7: elliptical comrade oppress slit cord deflection monetary enroll scorn frugal riotous
+4.7: elliptical comrade oppress slit cord deflection monetary scorn frugal riotous
 
 ### day51:
 
@@ -206,7 +206,7 @@
 
 ### day52:
 
-4.9: mighty cloak equivalence contemplate deduce veteran lease redound blot polarity steward deviation conceited inferior reassure leopard rib majesty
+4.9: mighty cloak equivalence deduce veteran lease redound blot polarity steward deviation conceited inferior reassure leopard rib majesty
 
 ### day52:
 
@@ -223,3 +223,7 @@
 ### day55:
 
 4.13: supper slender possession detriment symmetric consecutive cellar prescribed retort glitter untie manifesto cartridge meek hull crave recourse
+
+### day56:
+
+4.14: knit rooster enroll showroom contemplate bandit accrue legitimate supersonic glut strand preoccupy dictator accustom inaugural outland amuse woe errand earmark abridge
