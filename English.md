@@ -227,3 +227,7 @@
 ### day56:
 
 4.14: knit rooster enroll showroom contemplate bandit accrue legitimate supersonic glut strand preoccupy dictator accustom inaugural outland amuse woe errand earmark abridge
+
+### day57:
+
+4.15: elaborate dormitory blockage tonnage overthrow entreat prick obstinate
