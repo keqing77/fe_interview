@@ -231,3 +231,7 @@
 ### day57:
 
 4.15: elaborate dormitory blockage tonnage overthrow entreat prick obstinate
+
+### day58:
+
+4.16: eccentricity sympathize diligent perpendicular merit referee deem preliminary scotch aforesaid prosecution promissory particle monastery
