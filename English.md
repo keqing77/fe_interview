@@ -239,3 +239,7 @@
 ### day59:
 
 4.17: sector prosecution deem sore disposition standstill promissory fleece aforesaid
+
+### day60:
+
+4.18: scrape metallic courtesy poultry illiteracy premises inlet sheer squat cupboard disguise posterity hound inundate filthy trifle overhear rainfall extravagant blush deceitful vex potent preposition
