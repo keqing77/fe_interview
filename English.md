@@ -210,7 +210,7 @@
 
 ### day52:
 
-4.10: malaria bearish sean hurl discourse standstill glorify rescind invariably supervision thorough pedlar fortuity warship disposition
+4.10: malaria bearish sean hurl discourse glorify rescind invariably supervision thorough pedlar fortuity warship
 
 ### day53:
 
@@ -234,4 +234,8 @@
 
 ### day58:
 
-4.16: eccentricity sympathize diligent perpendicular merit referee deem preliminary scotch aforesaid prosecution promissory particle monastery
+4.16: eccentricity sympathize diligent perpendicular merit referee preliminary scotch particle monastery
+
+### day59:
+
+4.17: sector prosecution deem sore disposition standstill promissory fleece aforesaid
