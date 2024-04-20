@@ -10,7 +10,7 @@
 
 ### day3:
 
-2.20 : seaside chilly spur irritation aid bunch compact circulation pile stereo generosity thrash bulk cassette
+2.20 : seaside spur irritation aid bunch compact circulation pile stereo generosity thrash bulk cassette
 
 ### day4:
 
@@ -70,7 +70,7 @@
 
 ### day18:
 
-3.6: anticipate realm petroleum insulation grind brittle catalyst beverage fabric foam polymer curb solvent
+3.6: anticipate realm petroleum insulation grind brittle catalyst beverage fabric foam curb solvent
 
 ### day19:
 
@@ -82,7 +82,7 @@
 
 ### day21：
 
-3.9：recognition conducive designate comprehensive endeavor embark subtle kindle perception facillitate
+3.9：recognition conducive designate comprehensive endeavor embark subtle kindle perception facilitate
 
 ### day22:
 
@@ -98,7 +98,7 @@
 
 ### day25:
 
-3.13: distinctly variation adjacent lodging certify specialize exterior solitude lobby
+3.13: distinctly variation adjacent lodging certify specialize exterior lobby
 
 ### day26:
 
@@ -154,7 +154,7 @@
 
 ### day39:
 
-3.27: methodology nominate momentous recede colleague deficiency nightingale ardent accuse outrage verge radical projector hereby intonation
+3.27: methodology nominate momentous recede colleague deficiency nightingale accuse outrage verge radical projector hereby intonation
 
 ### day40:
 
@@ -214,11 +214,11 @@
 
 ### day53:
 
-4.11: spill cite standstill dilute proforma pantry convention immortal inertia obscure penetration pirate fracture exasperate
+4.11: spill cite standstill proforma pantry convention immortal inertia obscure penetration pirate fracture exasperate
 
 ### day54:
 
-4.12: utter lodge pickle peculiarity municipal resentful dismay resentful obscure slender wasp wicked expedience handicap whisker detriment patriotic snatch precede leaflet sickle negligible hasten supper
+4.12: utter lodge pickle peculiarity municipal resentful dismay wasp wicked expedience handicap whisker detriment patriotic snatch precede leaflet sickle negligible hasten
 
 ### day55:
 
@@ -238,7 +238,7 @@
 
 ### day59:
 
-4.17: sector prosecution deem sore disposition standstill promissory fleece aforesaid
+4.17: sector prosecution deem sore disposition promissory fleece aforesaid
 
 ### day60:
 
@@ -246,4 +246,4 @@
 
 ### day61:
 
-4.18: reed trolley rosy premises weep renewal juvenile streak sideways trail porch slumber trench basin pinch hardy pot escort unanimous balcony scarcely gutter
+4.19: reed trolley rosy premises weep renewal juvenile streak sideways trail porch slumber trench basin pinch hardy pot escort unanimous balcony scarcely gutter
