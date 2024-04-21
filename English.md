@@ -242,8 +242,12 @@
 
 ### day60:
 
-4.18: scrape metallic courtesy poultry illiteracy inlet sheer squat cupboard disguise posterity hound inundate filthy trifle overhear rainfall extravagant blush deceitful vex potent preposition
+4.18: scrape metallic courtesy poultry illiteracy inlet sheer squat cupboard disguise posterity hound filthy trifle overhear rainfall extravagant blush deceitful vex potent preposition
 
 ### day61:
 
 4.19: reed trolley rosy premises weep renewal juvenile streak sideways trail porch slumber trench basin pinch hardy pot escort unanimous balcony scarcely gutter
+
+### day62:
+
+4.20: inundate windowsill tuck ward replenish condense dip seize jettison orientation arbitrator signpost miscarry lapse eradication
