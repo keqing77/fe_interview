@@ -251,3 +251,7 @@
 ### day62:
 
 4.20: inundate windowsill tuck ward replenish condense dip seize jettison orientation arbitrator signpost miscarry lapse eradication
+
+### day63:
+
+4.21: lag haughty conduction jot regiment bygone mortal throng subjunctive ought Venus calf privileged junction
