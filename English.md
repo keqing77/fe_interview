@@ -255,3 +255,7 @@
 ### day64:
 
 4.21: lag haughty conduction jot regiment bygone mortal throng subjunctive ought Venus calf privileged junction
+
+### day65:
+
+4.22: skirmish pessimistic bride arbitrary Atlantic engagement dull incline jar gem rigorous unload pledge illusion ratify prosecute perseverance aggregation mischief tremble torpedo
