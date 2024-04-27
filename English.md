@@ -267,3 +267,15 @@
 ### day67:
 
 4.24: viscous slope
+
+### day68:
+
+4.25: regime quota casualty cosmopolitan expenditure stain steer beak fraction perish unprecedented catastrophe plural bravery vessel shatter voyage embody ginger drunkard parcel cosmos pawn
+
+### day69:
+
+4.26: 休息
+
+### day70:
+
+4.27: reservoir stir resemblance yeast ripe marble sprout empirical pneumonia ornamental fumble
