@@ -279,3 +279,7 @@
 ### day70:
 
 4.27: reservoir stir resemblance yeast ripe marble sprout empirical pneumonia ornamental fumble
+
+### day71:
+
+4.28: terribly purify contradiction nun faulty settlement exertion premium yacht pretense refrain versus divine sermon allergic reimburse del-credere shorthand formidable
