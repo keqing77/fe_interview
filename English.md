@@ -287,3 +287,7 @@
 ### day72:
 
 4.29: suppression couch confide sake companion dedicate pastime miniature countermeasure annex magnify wade
+
+### day73:
+
+4.30: precision burdensome dismissal graze sophisticated expedient nasty indebted
