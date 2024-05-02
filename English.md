@@ -295,3 +295,7 @@
 ### day74:
 
 5.1: operative gorge stern woodpecker garrison perturbed occidental maiden stitch frosty luminous consign recompense retain ceremonial
+
+### day75:
+
+5.2: hay amplify dispel monstrous situate dagger legislation stowage scoff martyr tedious opal transistor aristocrat accede desolate definitive exile fuse impose
