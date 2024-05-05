@@ -299,3 +299,15 @@
 ### day75:
 
 5.2: hay amplify dispel monstrous situate dagger legislation stowage scoff martyr tedious opal transistor aristocrat accede desolate definitive exile fuse impose
+
+### day76:
+
+5.3： 休息
+
+### day77:
+
+5.4：bleach contestant suspicion dubious auditorium rehearse peasantry sturdy halfway clasp ambient sampling morale auspice overcast dramatize
+
+### day78:
+
+5.5: commodity lubrication plunge enormous den saint winding discreetly sole merchandise bomber bidding chick shilling precedence estate par grieve
