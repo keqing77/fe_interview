@@ -311,3 +311,9 @@
 ### day78:
 
 5.5: commodity lubrication plunge enormous den saint winding discreetly sole merchandise bomber bidding chick shilling precedence estate par grieve
+
+### day79:
+
+5.6: uniformly uproar warrant f pertinent inclination excessive bridle solemn
+
+ 
