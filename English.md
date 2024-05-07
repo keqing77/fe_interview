@@ -316,4 +316,6 @@
 
 5.6: uniformly uproar warrant f pertinent inclination excessive bridle solemn
 
- 
+### day80:
+
+5.7: norm patrol faint moss foe submerge vanish stump marsh grope banquet velvet affair comprise exemplify
