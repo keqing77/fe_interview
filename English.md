@@ -314,8 +314,16 @@
 
 ### day79:
 
-5.6: uniformly uproar warrant f pertinent inclination excessive bridle solemn
+5.6: uniformly uproar warrant pertinent inclination excessive bridle solemn
 
 ### day80:
 
 5.7: norm patrol faint moss foe submerge vanish stump marsh grope banquet velvet affair comprise exemplify
+
+### day81:
+
+5.8: 休息
+
+### day82:
+
+5.9: wit condensation behindhand expiry commandment imprisonment feudalism degradation gale pictorial
