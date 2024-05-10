@@ -327,3 +327,7 @@
 ### day82:
 
 5.9: wit condensation behindhand expiry commandment imprisonment feudalism degradation gale pictorial
+
+### day83:
+
+5.10: constable bribe remembrance symbolize irrigation arrogance aggregate souvenir stare
