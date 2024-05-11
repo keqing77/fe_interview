@@ -218,7 +218,7 @@
 
 ### day55:
 
-4.12: utter lodge pickle peculiarity municipal resentful dismay wasp wicked expedience handicap whisker detriment patriotic snatch precede leaflet sickle negligible hasten
+4.12: utter lodge pickle municipal resentful dismay wasp wicked expedience handicap whisker detriment patriotic snatch precede leaflet sickle negligible hasten
 
 ### day56:
 
@@ -331,3 +331,7 @@
 ### day83:
 
 5.10: constable bribe remembrance symbolize irrigation arrogance aggregate souvenir stare
+
+### day84:
+
+5.11: dissolve comprehend remedy eloquence bullion prophet panoramic therewith gratifying imitate peculiar orchard tumble
