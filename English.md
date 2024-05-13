@@ -343,3 +343,7 @@
 ### day86:
 
 5.13: reef weld serene hazard yearn modulate prestige abasement magnetism baffle conscience delusive adverbial
+
+### day87:
+
+5.14: midst identical
