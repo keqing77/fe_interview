@@ -335,3 +335,11 @@
 ### day84:
 
 5.11: dissolve comprehend remedy eloquence bullion prophet panoramic therewith gratifying imitate peculiar orchard tumble
+
+### day85:
+
+5.12: 休息
+
+### day86:
+
+5.13: reef weld serene hazard yearn modulate prestige abasement magnetism baffle conscience delusive adverbial
