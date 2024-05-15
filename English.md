@@ -347,3 +347,7 @@
 ### day87:
 
 5.14: midst identical
+
+### day88:
+
+5.15: stationery deduction countenance motel attic flare scandal compensation compulsory varnish
