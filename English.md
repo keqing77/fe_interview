@@ -351,3 +351,7 @@
 ### day88:
 
 5.15: stationery deduction countenance motel attic flare scandal compensation compulsory varnish
+
+### day89:
+
+5.16: warehousing illustrate sniff insistent exclamation solitary allotment limp plateau mince
