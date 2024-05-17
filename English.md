@@ -355,3 +355,7 @@
 ### day89:
 
 5.16: warehousing illustrate sniff insistent exclamation solitary allotment limp plateau mince
+
+### day90:
+
+5.17: negation fleshy resolutely devote refusal confrontation feudal mishap
