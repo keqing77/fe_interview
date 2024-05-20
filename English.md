@@ -366,4 +366,9 @@
 
 ### day92:
 
-5.18: pluck reiterate drench unduly fortitude dreary curtail
+5.19: pluck reiterate drench unduly fortitude dreary curtail
+
+### day93:
+
+5.20: expedite gum walnut smack fussy depreciate filth quartz
+afloat arena tare workmanship
