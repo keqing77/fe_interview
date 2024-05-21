@@ -372,3 +372,7 @@
 
 5.20: expedite gum walnut smack fussy depreciate filth quartz
 afloat arena tare workmanship
+
+### day94:
+
+5.21: resentment inflict defiant surmise cafeteria mentality antonym malaise distributorship maize recitation rally
