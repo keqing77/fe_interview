@@ -376,3 +376,7 @@ afloat arena tare workmanship
 ### day94:
 
 5.21: resentment inflict defiant surmise cafeteria mentality antonym malaise distributorship maize recitation rally
+
+### day95:
+
+5.22: clash revolve misinterpret permanence oath leftover smuggle demolition ultraviolet provision idleness absorption bandage scrutiny conscientious veto escalator
