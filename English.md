@@ -380,3 +380,7 @@ afloat arena tare workmanship
 ### day95:
 
 5.22: clash revolve misinterpret permanence oath leftover smuggle demolition ultraviolet provision idleness absorption bandage scrutiny conscientious veto escalator
+
+### day96:
+
+5.23: 休息
