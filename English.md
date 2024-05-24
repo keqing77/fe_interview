@@ -384,3 +384,7 @@ afloat arena tare workmanship
 ### day96:
 
 5.23: 休息
+
+### day97:
+
+5.24: salutation heave conspicuous pant superstition defray miraculous sly fodder emancipation hindrance
