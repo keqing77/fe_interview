@@ -388,3 +388,7 @@ afloat arena tare workmanship
 ### day97:
 
 5.24: salutation heave conspicuous pant superstition defray miraculous sly fodder emancipation hindrance
+
+### day98:
+
+5.25: salmon flank dazzling perturb notorious brochure aptitude rinse
