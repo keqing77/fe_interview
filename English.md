@@ -392,3 +392,7 @@ afloat arena tare workmanship
 ### day98:
 
 5.25: salmon flank dazzling perturb notorious brochure aptitude rinse
+
+### day99:
+
+5.26: sack contemplation magnitude enchant petition plumb prevail manifestation squash past-due monopolies exasperation sneer soy
