@@ -396,3 +396,7 @@ afloat arena tare workmanship
 ### day99:
 
 5.26: sack contemplation magnitude enchant petition plumb prevail manifestation squash past-due monopolies exasperation sneer soy
+
+### day100:
+
+5.27: 休息
