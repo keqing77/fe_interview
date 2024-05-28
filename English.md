@@ -400,3 +400,7 @@ afloat arena tare workmanship
 ### day100:
 
 5.27: 休息
+
+### day101:
+
+5.28: confess cope pilgrimage comply essence peasant inquiry commence ridicule resent villa suite versatile snobbish reimbursement leeway thrifty
