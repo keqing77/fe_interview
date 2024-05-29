@@ -404,3 +404,11 @@ afloat arena tare workmanship
 ### day101:
 
 5.28: confess cope pilgrimage comply essence peasant inquiry commence ridicule resent villa suite versatile snobbish reimbursement leeway thrifty
+
+### day102:
+
+5.29: ferry liability reliance slump kettle ignite vacuum bosom abrogation
+
+### day103:
+
+5.30:
