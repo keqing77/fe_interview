@@ -411,4 +411,12 @@ afloat arena tare workmanship
 
 ### day103:
 
-5.30:
+5.30: campaign denomination butchery inasmuch discreet
+
+### day104:
+
+5.31: eccentric transact endorse ominous deteriorate anticipation lounge detrimental irrespective proprietorship subdue vouch deform ranch ferocious franchise marginal abide bulky denominate
+
+### day105:
+
+6.1: disposed circuit limousine plough derrick denation assassinator encircle stapler trot countermand pertinence shriek
