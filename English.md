@@ -420,3 +420,7 @@ afloat arena tare workmanship
 ### day105:
 
 6.1: disposed circuit limousine plough derrick denation assassinator encircle stapler trot countermand pertinence shriek
+
+### day106:
+
+6.2: wardrobe simultaneous insignificant scorching witty peck clerk marshal disparity crate offspring bid
