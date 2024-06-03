@@ -428,3 +428,7 @@ afloat arena tare workmanship
 ### day107:
 
 6.3: pail prone preside propel drastic indulge wrench thoughtless defy tug implore proportional tramp fathom adhere
+
+### day108:
+
+6.4: inference imminent rapture explanatory quench clamp grasshopper rectify mincer apparatus massacre tact sparrow
