@@ -432,3 +432,7 @@ afloat arena tare workmanship
 ### day108:
 
 6.4: inference imminent rapture explanatory quench clamp grasshopper rectify mincer apparatus massacre tact sparrow
+
+### day109:
+
+6.5: rebate precaution cheque tumult exonerate bristle tobacco depreciation exhaustive conceit
