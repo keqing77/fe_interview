@@ -436,3 +436,7 @@ afloat arena tare workmanship
 ### day109:
 
 6.5: rebate precaution cheque tumult exonerate bristle tobacco depreciation exhaustive conceit
+
+### day110:
+
+6.6: rack gross vicinity fission duly remnant peripheral peruse fable
