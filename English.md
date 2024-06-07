@@ -440,3 +440,7 @@ afloat arena tare workmanship
 ### day110:
 
 6.6: rack gross vicinity fission duly remnant peripheral peruse fable
+
+### dai111:
+
+6.7: screech stagnation sheepish confine declaration muffle violation pigment ventilation elapse windmill
