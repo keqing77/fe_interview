@@ -441,6 +441,10 @@ afloat arena tare workmanship
 
 6.6: rack gross vicinity fission duly remnant peripheral peruse fable
 
-### dai111:
+### day111:
 
 6.7: screech stagnation sheepish confine declaration muffle violation pigment ventilation elapse windmill
+
+### day112:
+
+6.8: dwell componential bureaucratic compliance subtraction nomination zeal recur penalty bundle sprain plunder cunning persecution postponement coefficient bourgeois stagger uphold
