@@ -448,3 +448,7 @@ afloat arena tare workmanship
 ### day112:
 
 6.8: dwell componential bureaucratic compliance subtraction nomination zeal recur penalty bundle sprain plunder cunning persecution postponement coefficient bourgeois stagger uphold
+
+### day113:
+
+6.9: fiddle infectious tuberculosis apprentice temptation suspend vigor specify permit magistrate proverb sexuality redeem slum prudence
