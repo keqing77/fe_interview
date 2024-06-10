@@ -452,3 +452,7 @@ afloat arena tare workmanship
 ### day113:
 
 6.9: fiddle infectious tuberculosis apprentice temptation suspend vigor specify permit magistrate proverb sexuality redeem slum prudence
+
+### day114:
+
+6.10: deviate trivial loom matinee disloyalty sophistication acrobatics perfume rascal expiration parachute endorsement stalk outturn
