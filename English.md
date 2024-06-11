@@ -456,3 +456,7 @@ afloat arena tare workmanship
 ### day114:
 
 6.10: deviate trivial loom matinee disloyalty sophistication acrobatics perfume rascal expiration parachute endorsement stalk outturn
+
+### day115:
+
+6.11: apt vow patron immense madman purity stillness conservative exposition intrude dike cereal esteem postage abruptly prescribe piston tranquil sarcastic perplex mob subsidiary insofar stencil benevolent
