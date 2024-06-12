@@ -460,3 +460,7 @@ afloat arena tare workmanship
 ### day115:
 
 6.11: apt vow patron immense madman purity stillness conservative exposition intrude dike cereal esteem postage abruptly prescribe piston tranquil sarcastic perplex mob subsidiary insofar stencil benevolent
+
+### day116:
+
+6.12: elaboration sardine raid tentative heed lily synonym collide voucher prejudice grim hospitable shrine lipstick missile
