@@ -464,3 +464,7 @@ afloat arena tare workmanship
 ### day116:
 
 6.12: elaboration sardine raid tentative heed lily synonym collide voucher prejudice grim hospitable shrine lipstick missile
+
+### day117:
+
+6.13: adversary conjunction intervene drainage procurement monotony wordy drugstore stronghold hurrah pertain bolt clearance compensate demurrage moustache sift clutch deterioration deduct
