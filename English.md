@@ -468,3 +468,7 @@ afloat arena tare workmanship
 ### day117:
 
 6.13: adversary conjunction intervene drainage procurement monotony wordy drugstore stronghold hurrah pertain bolt clearance compensate demurrage moustache sift clutch deterioration deduct
+
+### day118:
+
+6.14: industrious contest pathetic brook inadequate alienate burst residual charcoal optimal unjust ferrous stammer unfit variant tempt commemorate
