@@ -472,3 +472,7 @@ afloat arena tare workmanship
 ### day118:
 
 6.14: industrious contest pathetic brook inadequate alienate burst residual charcoal optimal unjust ferrous stammer unfit variant tempt commemorate
+
+### day119:
+
+6.15: mackintosh hearth depict ample inherent harmonious fatigue fireplace compromise disregard displacement outset shiver terrace shroud perimeter luncheon adjoin seizure
