@@ -476,3 +476,11 @@ afloat arena tare workmanship
 ### day119:
 
 6.15: mackintosh hearth depict ample inherent harmonious fatigue fireplace compromise disregard displacement outset shiver terrace shroud perimeter luncheon adjoin seizure
+
+### day120:
+
+6.16: linguist repairmen hiss crutch siege nought barren epoch solicitor rash sag baggage slander humane roam canal saturation impatient commemoration
+
+### day121:
+
+6.17: monarch stirring kidnaper syllable jeopardize subordinate mariner ultimo deficient barometer persuasion
