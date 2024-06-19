@@ -484,3 +484,11 @@ afloat arena tare workmanship
 ### day121:
 
 6.17: monarch stirring kidnaper syllable jeopardize subordinate mariner ultimo deficient barometer persuasion
+
+### day122:
+
+6.18: implication dazzle coffin contempt memoir counter-offer breakage motionless custody maid stuffy ravage oversight masculine tactics apprize intimation pope conduce amends twilight acquisition
+
+### day123:
+
+6.19: 休息
