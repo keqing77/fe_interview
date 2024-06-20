@@ -495,4 +495,8 @@ afloat arena tare workmanship
 
 ### day124:
 
-6.20: 休息
+6.20: entrust brood overjoy flask tally interior hereafter frightful inversely fishery cardboard enumerate geometry relativity unconscious occupation hillside stainless turbine zinc conveyance unobtainable perusal hymn cardinal provisional persecute rectification telefax invade skyrocket stool stipulate inferiority hurry feasibility businesslike handout ajar nullify restless algebra retell
+
+### day125:
+
+6.21:
