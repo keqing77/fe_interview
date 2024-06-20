@@ -492,3 +492,7 @@ afloat arena tare workmanship
 ### day123:
 
 6.19: 休息
+
+### day124:
+
+6.20: 休息
