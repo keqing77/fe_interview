@@ -512,3 +512,7 @@ afloat arena tare workmanship
 ### day128:
 
 6.24: makeshift encyclopedia arouse grumble solvency metallurgy clinic plume ore monopoly hasty sultry stroller incense beam
+
+### day129:
+
+6.25: stadium expedition heartfelt indispensable lest pit disbursement cathedral hitherto coarse amplification glisten
