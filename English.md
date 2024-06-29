@@ -531,4 +531,4 @@ afloat arena tare workmanship
 
 ### day133:
 
-6.29:
+6.29: 休息
