@@ -540,3 +540,7 @@ afloat arena tare workmanship
 ### day135:
 
 7.1 : cracker vowel perch tabulate withhold procure slay bushel vulgar exalt marvellous
+
+### day136:
+
+7.2: disinclined crow halve impartial inaugurate mast antique cork kidnap constituent freight fervent optical
