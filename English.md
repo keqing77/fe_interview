@@ -544,3 +544,7 @@ afloat arena tare workmanship
 ### day136:
 
 7.2: disinclined crow halve impartial inaugurate mast antique cork kidnap constituent freight fervent optical
+
+### day137:
+
+7.3: bugle suspicious coil convict embroider condemn cordially mend specimen odour scent contemptuous petty shrewd dissipate supervisor furnace glossary embassy prevail obstruction conscientiously narrate rebel statesman
