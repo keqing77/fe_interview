@@ -547,4 +547,8 @@ afloat arena tare workmanship
 
 ### day137:
 
-7.3: bugle suspicious coil convict embroider condemn cordially mend specimen odour scent contemptuous petty shrewd dissipate supervisor furnace glossary embassy prevail obstruction conscientiously narrate rebel statesman
+7.3: bugle suspicious coil convict embroider condemn cordially mend specimen odour scent contemptuous petty shrewd dissipate supervisor furnace glossary embassy obstruction conscientiously narrate rebel statesman
+
+### day138:
+
+7.4: attentively quarrel persuade deprive enquiry formulation devaluation moderately beetle dread recurrence vengeance canvass Locust conversant wharf tow depiction
