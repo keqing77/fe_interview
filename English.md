@@ -552,3 +552,7 @@ afloat arena tare workmanship
 ### day138:
 
 7.4: attentively quarrel persuade deprive enquiry formulation devaluation moderately beetle dread recurrence vengeance canvass Locust conversant wharf tow depiction
+
+### day139:
+
+7.5: hind pigment delegation pronoun hedgehog oar hydroelectric haggle
