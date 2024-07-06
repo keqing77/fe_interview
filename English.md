@@ -556,3 +556,7 @@ afloat arena tare workmanship
 ### day139:
 
 7.5: hind pigment delegation pronoun hedgehog oar hydroelectric haggle
+
+### day140:
+
+7.6: transplant foretell damp superintendent hereinafter countersignature clench imperative disburse ridge literacy daze preface intercourse induction faction sleeve corrode
