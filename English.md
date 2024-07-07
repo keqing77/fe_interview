@@ -564,3 +564,7 @@ afloat arena tare workmanship
 ### day141:
 
 7.7: shipwreck benevolence deception repent opium outlandish abreast diction concession mournful gasp hypocrisy
+
+### day142:
+
+7.8: statute shaft fringe triumph arrear frail screwdriver figurative nominal barge heartily outermost constitution shed hairdress ornament
