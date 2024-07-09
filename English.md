@@ -568,3 +568,7 @@ afloat arena tare workmanship
 ### day142:
 
 7.8: statute shaft fringe triumph arrear frail screwdriver figurative nominal barge heartily outermost constitution shed hairdress ornament
+
+### day143:
+
+7.9: lime triumphant antagonism portray jog mythology collar tyranny stout deflate refute clumsy plea waive porcelain waist ventilate
