@@ -572,3 +572,11 @@ afloat arena tare workmanship
 ### day143:
 
 7.9: lime triumphant antagonism portray jog mythology collar tyranny stout deflate refute clumsy plea waive porcelain waist ventilate
+
+### day144:
+
+7.10: withhold plea cemetery admission panorama senate pitcher sieve exempt jumble yoke tuna monk strait
+
+### day145:
+
+7.11: shutter thoroughly radish cottage highland cavity sleet vainly prelude unbearable satire racket courtyard prominence biographer righteous kerosene magician confer tiptoe thorn negate gust receptionist wagon exquisite
