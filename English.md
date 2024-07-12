@@ -580,3 +580,7 @@ afloat arena tare workmanship
 ### day145:
 
 7.11: shutter thoroughly radish cottage highland cavity sleet vainly prelude unbearable satire racket courtyard prominence biographer righteous kerosene magician confer tiptoe thorn negate gust receptionist wagon exquisite
+
+### day146:
+
+7.12: commune underwriter momentary voiceless tack craftsman plight pale postulate infringement grin amicable endow airmail famine quay carpet
