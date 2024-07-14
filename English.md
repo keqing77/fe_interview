@@ -584,3 +584,12 @@ afloat arena tare workmanship
 ### day146:
 
 7.12: commune underwriter momentary voiceless tack craftsman plight pale postulate infringement grin amicable endow airmail famine quay carpet
+
+### day147:
+
+7.13: bullish waver console hairpin Cape gunpowder picturesque cab celery delusion substitution reproach quiver sovereignty capita dodge tarriff cease
+
+### day148:
+
+7.14: tangle mint pane barometer pyjamas reple dew penetrate soot elusive canoe toad rag navel discrepancy conspiracy metropolitan fractional serenity hydraulic
+magnetic chap gracious reach feud nourishment tolerable obliterate depart fret shipyard crimson
