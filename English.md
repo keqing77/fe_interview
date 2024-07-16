@@ -598,3 +598,7 @@ magnetic chap gracious reach feud nourishment tolerable obliterate depart fret s
 
 7.15: donkey plantation immature lonesome stripe accordance erasure pessimist inorganic dingy occurrence brink outskirts repeal awfully restrain strife cohesion
 amplifier melancholy bough frown haggard dumb siren
+
+### day150:
+
+7.16: offset doctrine defiance alas aching clatter treaty ashtray vividness jingle plenary retroactive disinfectant aural tram hideous deficit abeyance
