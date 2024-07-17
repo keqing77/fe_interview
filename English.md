@@ -602,3 +602,7 @@ amplifier melancholy bough frown haggard dumb siren
 ### day150:
 
 7.16: offset doctrine defiance alas aching clatter treaty ashtray vividness jingle plenary retroactive disinfectant aural tram hideous deficit abeyance
+
+### day151:
+
+7.17: forsake hamper prohibition buffet fragrant terminology devour lavatory punctuation meticulous backing rebellion
