@@ -606,3 +606,7 @@ amplifier melancholy bough frown haggard dumb siren
 ### day151:
 
 7.17: forsake hamper prohibition buffet fragrant terminology devour lavatory punctuation meticulous backing rebellion
+
+### day152:
+
+7.18: skim lad inferiority ballroom trample remit cavalry booklet relish flatter courteous reciprocal vividly embroidery thermometer shrill levy
