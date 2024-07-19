@@ -610,3 +610,7 @@ amplifier melancholy bough frown haggard dumb siren
 ### day152:
 
 7.18: skim lad inferiority ballroom trample remit cavalry booklet relish flatter courteous reciprocal vividly embroidery thermometer shrill levy
+
+### day153:
+
+7.19: wharf dictation propellent bewilder beetle canvass rectification Moor itemize hold-up vault negligent exploit constitutive coward calculus fling timid advisable muffler cutlery propagation
