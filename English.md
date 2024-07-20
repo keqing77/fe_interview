@@ -614,3 +614,7 @@ amplifier melancholy bough frown haggard dumb siren
 ### day153:
 
 7.19: wharf dictation propellent bewilder beetle canvass rectification Moor itemize hold-up vault negligent exploit constitutive coward calculus fling timid advisable muffler cutlery propagation
+
+### day154:
+
+7.20: wretched bench respectively thigh chorus peel obligation volley stride astray confinement naval
