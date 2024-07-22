@@ -622,3 +622,11 @@ amplifier melancholy bough frown haggard dumb siren
 ### day155:
 
 7.21: hereto deceased reactionary affirmative consulate locomotive irrigate astound
+
+### day156:
+
+7.22: sparkle oblige concerted formerly bona fide ammunition consolidate stink proletarian habitual dome reconcile denote parish acquaintance scarlet
+
+### day157:
+
+7.23:
