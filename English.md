@@ -634,3 +634,15 @@ amplifier melancholy bough frown haggard dumb siren
 ### day158:
 
 7.24: daybreak wage pursuance homogenous sterling herbal arbitration wring strap repudiate foliage prudent engraving ecstasy splendid
+
+### day159:
+
+7.25: illiterate fuss negate germ herd commend rivalry wither demolish oyster
+
+### day160:
+
+7.26: reckon dine attorney thumbtack fob adversity pasture tread formulate forgery tyrant illusive exoneration latent
+
+### day161:
+
+7.27: sarcasm airway bacterium breach prism captive misgiving plead heiress housekeeper crane dismal disintegration disciplinary menace reconnaissance herb pilferage
