@@ -662,3 +662,7 @@ amplifier melancholy bough frown haggard dumb siren
 ### day165:
 
 7.31: dispose jug dainty indignation bossy
+
+### day166:
+
+8.1: landlady moth deed dissimilar timber fort transship plump divergence provocation undue negligence infringe mumps angular
