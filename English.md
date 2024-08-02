@@ -665,4 +665,9 @@ amplifier melancholy bough frown haggard dumb siren
 
 ### day166:
 
-8.1: landlady moth deed dissimilar timber fort transship plump divergence provocation undue negligence infringe mumps angular
+8.1: landlady moth deed dissimilar timber fort transship plump divergence provocation undue negligence infringe mumps angular stipulation
+
+### day167:
+
+8.2: resign affectionate turnip flake senseless restriction equality diesel
+detain rod
