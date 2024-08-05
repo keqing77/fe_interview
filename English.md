@@ -682,4 +682,4 @@ detain rod
 
 ### day170:
 
-8.5:
+8.5: inauguration proprietor flake brag diesel testimony treason feeble wrath unaccommodating drown bribery
