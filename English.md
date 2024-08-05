@@ -671,3 +671,15 @@ amplifier melancholy bough frown haggard dumb siren
 
 8.2: resign affectionate turnip flake senseless restriction equality diesel
 detain rod
+
+### day168:
+
+8.3: 休息
+
+### day169:
+
+8.4: 休息
+
+### day170:
+
+8.5:
