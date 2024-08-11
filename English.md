@@ -687,3 +687,7 @@ detain rod
 ### day171:
 
 8.6: tulip pious pretentious conformity annoyance pursuant prohibitive pension
+
+### day172:
+
+8.7: groundless peninsula indicative indignant reminiscence crouch
